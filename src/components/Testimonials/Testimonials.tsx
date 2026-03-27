@@ -1,38 +1,8 @@
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
-const testimonials = [
-  {
-    id: 1,
-    name: "Sarah Mitchell",
-    role: "Interior Designer",
-    content:
-      "Gli arredi di AM Mida hanno trasformato completamente lo spazio del mio cliente. La qualità è eccezionale e l'attenzione ai dettagli è senza pari. Ogni pezzo sembra un'opera d'arte.",
-    rating: 5,
-    image:
-      "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=200",
-  },
-  {
-    id: 2,
-    name: "Michael Chen",
-    role: "Proprietario di casa",
-    content:
-      "Cercavo il tavolo da pranzo perfetto da mesi. Il tavolo Stockholm ha superato tutte le mie aspettative. È bellissimo, robusto e l'artigianato è fenomenale.",
-    rating: 5,
-    image:
-      "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=200",
-  },
-  {
-    id: 3,
-    name: "Emma Rodriguez",
-    role: "Architetto",
-    content:
-      "Come architetto, apprezzo il design che resiste alla prova del tempo. AM Mida offre esattamente questo. I loro pezzi sono degni di investimento e incredibilmente versatili.",
-    rating: 5,
-    image:
-      "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=200",
-  },
-];
+import { TESTIMONIALS as testimonials } from "../../constants/data";
+
 
 export const Testimonials = (): JSX.Element => {
   return (

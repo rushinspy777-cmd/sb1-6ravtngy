@@ -3,26 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const slides = [
-  {
-    image: "https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    category: "Cucina",
-    title: "Cucine da Sogno",
-    subtitle: "Soluzioni su misura per il cuore della tua casa, dove funzionalità ed estetica si incontrano.",
-  },
-  {
-    image: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    category: "Zona Giorno",
-    title: "Il Tuo Living",
-    subtitle: "Scopri arredi senza tempo creati con precisione e passione per il tuo spazio relax.",
-  },
-  {
-    image: "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    category: "Zona Notte",
-    title: "Comfort Notturno",
-    subtitle: "Eleganza e riposo senza compromessi. Crea il tuo rifugio personale con i nostri letti e complementi.",
-  },
-];
+import { HERO_SLIDES as slides } from "../../constants/data";
+
 
 export const Hero = (): JSX.Element => {
   const [currentSlide, setCurrentSlide] = useState(0);

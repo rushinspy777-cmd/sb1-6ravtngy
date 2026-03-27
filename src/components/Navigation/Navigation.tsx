@@ -3,10 +3,15 @@ import { Link } from "react-router-dom";
 import { Search, ShoppingCart, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+import { NAVIGATION_ITEMS as menuItems } from "../../constants/data";
+import { useStore } from "../../store/useStore";
+
 export const Navigation = (): JSX.Element => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [cartCount] = useState(0);
+  const { cart, setIsCartOpen, setIsSearchOpen } = useStore();
+
+  const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,54 +21,6 @@ export const Navigation = (): JSX.Element => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const menuItems = [
-    {
-      name: "Cucina",
-      href: "/kitchen",
-      subItems: [
-        { name: "Moderno", href: "/kitchen/modern" },
-        { name: "Classico", href: "/kitchen/classic" },
-        { name: "Elettrodomestici da incasso", href: "/kitchen/appliances" },
-      ],
-    },
-    {
-      name: "Zona Giorno",
-      href: "/living",
-      subItems: [
-        { name: "Divani", href: "/living/sofas" },
-        { name: "Pareti Attrezzate", href: "/living/wall-units" },
-        { name: "Madie e Credenze", href: "/living/sideboards" },
-        { name: "Tavoli e Sedie", href: "/living/dining" },
-      ],
-    },
-    {
-      name: "Zona Notte",
-      href: "/bedroom",
-      subItems: [
-        { name: "Camere Matrimoniali", href: "/bedroom/adult-sets" },
-        { name: "Camerette", href: "/bedroom/childrens" },
-        { name: "Materassi", href: "/bedroom/mattresses" },
-      ],
-    },
-    {
-      name: "Ufficio",
-      href: "/office",
-      subItems: [
-        { name: "Scrivanie", href: "/office/desks" },
-        { name: "Sedute Operative", href: "/office/task-seating" },
-        { name: "Librerie e Contenitori", href: "/office/storage" },
-      ],
-    },
-    {
-      name: "Complementi",
-      href: "/utility",
-      subItems: [
-        { name: "Ingressi", href: "/utility/entryway" },
-        { name: "Bagno", href: "/utility/bathroom" },
-        { name: "Porte Blindate", href: "/utility/security-doors" },
-      ],
-    },
-  ];
 
   return (
     <motion.nav
@@ -87,6 +44,8 @@ export const Navigation = (): JSX.Element => {
                 <Link
                   to={item.href}
                   className="text-sm font-medium text-neutral-700 h-20 flex items-center hover:text-neutral-900 transition-colors duration-200 relative"
+                  aria-haspopup={!!item.subItems}
+                  aria-expanded={false} // Would need per-item state for true hover-based expansion
                 >
                   {item.name}
                   <span className="absolute bottom-4 left-0 w-0 h-0.5 bg-neutral-900 group-hover:w-full transition-all duration-300" />
@@ -111,25 +70,27 @@ export const Navigation = (): JSX.Element => {
 
           <div className="flex items-center space-x-6">
             <button
-              onClick={() => { }}
+              onClick={() => setIsSearchOpen(true)}
               className="text-neutral-700 hover:text-neutral-900 transition-colors duration-200"
               aria-label="Cerca"
+              aria-haspopup="dialog"
             >
               <Search className="w-5 h-5" />
             </button>
 
-            <Link
-              to="/cart"
+            <button
+              onClick={() => setIsCartOpen(true)}
               className="relative text-neutral-700 hover:text-neutral-900 transition-colors duration-200"
-              aria-label="Carrello"
+              aria-label={`Carrello, ${cartCount} articoli`}
+              aria-haspopup="dialog"
             >
               <ShoppingCart className="w-5 h-5" />
               {cartCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-neutral-900 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                <span className="absolute -top-2 -right-2 bg-neutral-900 text-white text-[10px] rounded-full w-5 h-5 flex items-center justify-center font-bold">
                   {cartCount}
                 </span>
               )}
-            </Link>
+            </button>
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

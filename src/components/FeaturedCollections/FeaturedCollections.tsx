@@ -3,40 +3,8 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import ParallaxImage from "../ParallaxImage";
 
-const collections = [
-  {
-    id: 1,
-    title: "Zona Giorno",
-    description: "Comfort sofisticato",
-    image:
-      "https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg?auto=compress&cs=tinysrgb&w=800",
-    href: "/collections/living-room",
-  },
-  {
-    id: 2,
-    title: "Zona Notte",
-    description: "Santuari di pace",
-    image:
-      "https://images.pexels.com/photos/1743231/pexels-photo-1743231.jpeg?auto=compress&cs=tinysrgb&w=800",
-    href: "/collections/bedroom",
-  },
-  {
-    id: 3,
-    title: "Sala da Pranzo",
-    description: "Riunirsi con stile",
-    image:
-      "https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&w=800",
-    href: "/collections/dining",
-  },
-  {
-    id: 4,
-    title: "Ufficio",
-    description: "Eleganza produttiva",
-    image:
-      "https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg?auto=compress&cs=tinysrgb&w=800",
-    href: "/collections/office",
-  },
-];
+import { COLLECTIONS as collections } from "../../constants/data";
+
 
 export const FeaturedCollections = (): JSX.Element => {
   return (

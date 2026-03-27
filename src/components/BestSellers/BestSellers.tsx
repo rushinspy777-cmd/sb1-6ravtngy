@@ -6,72 +6,12 @@ import { Filters } from "../Filters";
 import { LeadCaptureModal } from "../LeadCapture";
 import ParallaxImage from "../ParallaxImage";
 
-const products = [
-  {
-    id: 1,
-    name: "Oslo Lounge Chair",
-    price: 1299,
-    image:
-      "https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: "Sedute",
-    isReadyToShip: true,
-  },
-  {
-    id: 2,
-    name: "Copenhagen Sofa",
-    price: 2899,
-    image:
-      "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: "Sedute",
-    isReadyToShip: false,
-  },
-  {
-    id: 3,
-    name: "Stockholm Dining Table",
-    price: 1899,
-    image:
-      "https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: "Tavoli",
-    isReadyToShip: true,
-  },
-  {
-    id: 4,
-    name: "Helsinki Bed Frame",
-    price: 2199,
-    image:
-      "https://images.pexels.com/photos/1743231/pexels-photo-1743231.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: "Zona Notte",
-    isReadyToShip: false,
-  },
-  {
-    id: 5,
-    name: "Bergen Bookshelf",
-    price: 899,
-    image:
-      "https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: "Contenitori",
-    isReadyToShip: true,
-  },
-  {
-    id: 6,
-    name: "Trondheim Coffee Table",
-    price: 799,
-    image:
-      "https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: "Tavoli",
-    isReadyToShip: false,
-  },
-  {
-    id: 7,
-    name: "Minimalist Kitchen Island",
-    price: 4599,
-    image: "https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: "Cucina",
-    isReadyToShip: false,
-  }
-];
+import { PRODUCTS as products } from "../../constants/data";
+import { useStore } from "../../store/useStore";
+
 
 export const BestSellers = (): JSX.Element => {
+  const { addToCart, setIsCartOpen } = useStore();
   const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<string | undefined>(undefined);
@@ -150,7 +90,10 @@ export const BestSellers = (): JSX.Element => {
                     <Eye className="w-5 h-5 text-neutral-900" />
                   </Link>
                   <button
-                    onClick={() => {}}
+                    onClick={() => {
+                      addToCart(product);
+                      setIsCartOpen(true);
+                    }}
                     className="bg-white p-3 rounded-full hover:bg-neutral-100 transition-colors duration-200"
                     aria-label="Aggiungi al carrello"
                   >
