@@ -15,12 +15,12 @@ This checklist tracks the implementation of premium design enhancements for AM M
     - [x] Add a low-opacity noise/grain texture overlay to the entire site.
 
 ## Phase 2: Layout & Visual Depth
-- [ ] **Modern Grid System**
-    - [ ] Implement an asymmetrical Bento Grid for the "Featured Collections" section.
-- [ ] **Shadow Artistry**
-    - [ ] Apply multi-layered soft shadows (Ambient + Sharp) to product and feature cards.
-- [ ] **Modern Overlays**
-    - [ ] Apply `backdrop-blur-md` (Glassmorphism) to navigation bar and modal backgrounds.
+- [x] **Modern Grid System**
+    - [x] Implement an asymmetrical Bento Grid for the "Featured Collections" section.
+- [x] **Shadow Artistry**
+    - [x] Apply multi-layered soft shadows (Ambient + Sharp) to product and feature cards.
+- [x] **Modern Overlays**
+    - [x] Apply `backdrop-blur-md` (Glassmorphism) to navigation bar and modal backgrounds.
 
 ## Phase 3: Premium Motion (Framer Motion)
 - [ ] **Seamless Staggered Reveals**

@@ -29,7 +29,7 @@ export const ProductCard = ({ product, onQuoteRequest }: ProductCardProps) => {
             transition={{ duration: 0.6 }}
             className="group"
         >
-            <div className="relative aspect-square overflow-hidden bg-neutral-100 mb-4">
+            <div className="relative aspect-square overflow-hidden bg-neutral-100 mb-4 rounded-xl shadow-premium hover:shadow-2xl transition-all duration-500">
                 <motion.img
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.6 }}
