@@ -23,12 +23,12 @@ This checklist tracks the implementation of premium design enhancements for AM M
     - [x] Apply `backdrop-blur-md` (Glassmorphism) to navigation bar and modal backgrounds.
 
 ## Phase 3: Premium Motion (Framer Motion)
-- [ ] **Seamless Staggered Reveals**
-    - [ ] Add staggered `y: 20` and `opacity: 0` entrance animations for all main sections and components.
-- [ ] **Parallax Depth**
-    - [ ] Implement subtle parallax movement for product images during scroll.
-- [ ] **Cinematic Page Transitions**
-    - [ ] Implement a "fade-through-black" transition for all page navigations.
+- [x] **Seamless Staggered Reveals**
+    - [x] Add staggered `y: 20` and `opacity: 0` entrance animations for all main sections and components.
+- [x] **Parallax Depth**
+    - [x] Implement subtle parallax movement for product images during scroll.
+- [x] **Cinematic Page Transitions**
+    - [x] Implement a "fade-through-black" transition for all page navigations.
 
 ## Phase 4: Interaction Details
 - [ ] **Custom Fluid Cursor**

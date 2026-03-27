@@ -5,6 +5,7 @@ import { Footer } from "../components/Footer/Footer";
 import { ProductCard } from "../components/Product/ProductCard";
 import { useState } from "react";
 import { LeadCaptureModal } from "../components/LeadCapture";
+import SectionReveal from "../components/SectionReveal";
 
 const products = [
     {
@@ -52,30 +53,32 @@ export const CategoryPage = () => {
     };
 
     return (
-        <div className="pt-20">
+        <div className="pt-20 bg-[#FDFCFB] min-h-screen">
             <Navigation />
-            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <Breadcrumbs />
-                <div className="mb-12">
-                    <h1 className="text-4xl font-light text-neutral-900 mb-2 capitalize">
-                        {subCategory || category}
-                    </h1>
-                    <p className="text-neutral-500">
-                        {filteredProducts.length} Risultati
-                    </p>
-                </div>
+            <SectionReveal>
+                <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                    <Breadcrumbs />
+                    <div className="mb-12">
+                        <h1 className="text-4xl font-light text-neutral-900 mb-2 capitalize">
+                            {subCategory || category}
+                        </h1>
+                        <p className="text-neutral-500">
+                            {filteredProducts.length} Risultati
+                        </p>
+                    </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {filteredProducts.map(product => (
-                        <ProductCard key={product.id} product={product} onQuoteRequest={handleQuoteRequest} />
-                    ))}
-                    {filteredProducts.length === 0 && (
-                        <div className="col-span-full py-24 text-center">
-                            <p className="text-xl text-neutral-400">Nessun prodotto trovato in questa categoria.</p>
-                        </div>
-                    )}
-                </div>
-            </main>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {filteredProducts.map(product => (
+                            <ProductCard key={product.id} product={product} onQuoteRequest={handleQuoteRequest} />
+                        ))}
+                        {filteredProducts.length === 0 && (
+                            <div className="col-span-full py-24 text-center">
+                                <p className="text-xl text-neutral-400">Nessun prodotto trovato in questa categoria.</p>
+                            </div>
+                        )}
+                    </div>
+                </main>
+            </SectionReveal>
             <Footer />
             <LeadCaptureModal 
                 isOpen={isModalOpen}

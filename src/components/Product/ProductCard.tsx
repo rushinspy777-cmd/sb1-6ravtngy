@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ShoppingCart, Eye } from "lucide-react";
+import ParallaxImage from "../ParallaxImage";
 
 interface ProductCardProps {
     product: {
@@ -30,14 +31,10 @@ export const ProductCard = ({ product, onQuoteRequest }: ProductCardProps) => {
             className="group"
         >
             <div className="relative aspect-square overflow-hidden bg-neutral-100 mb-4 rounded-xl shadow-premium hover:shadow-2xl transition-all duration-500">
-                <motion.img
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.6 }}
+                <ParallaxImage
                     src={product.image}
                     alt={product.name}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full"
                 />
 
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">

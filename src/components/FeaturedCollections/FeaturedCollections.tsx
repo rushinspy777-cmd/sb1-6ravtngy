@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import ParallaxImage from "../ParallaxImage";
 
 const collections = [
   {
@@ -77,12 +78,10 @@ export const FeaturedCollections = (): JSX.Element => {
                 className="group block relative w-full h-full overflow-hidden bg-white rounded-2xl shadow-premium hover:shadow-2xl transition-all duration-500"
               >
                 <div className="relative w-full h-full">
-                  <motion.img
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.6 }}
+                  <ParallaxImage
                     src={collection.image}
                     alt={collection.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full"
                   />
                   {/* Hover overlay brightness reduction */}
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />

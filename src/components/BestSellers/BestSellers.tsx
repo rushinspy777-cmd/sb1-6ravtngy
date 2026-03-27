@@ -4,6 +4,7 @@ import { ShoppingCart, Eye } from "lucide-react";
 import { useState } from "react";
 import { Filters } from "../Filters";
 import { LeadCaptureModal } from "../LeadCapture";
+import ParallaxImage from "../ParallaxImage";
 
 const products = [
   {
@@ -127,12 +128,10 @@ export const BestSellers = (): JSX.Element => {
               className="group"
             >
               <div className="relative aspect-square overflow-hidden bg-neutral-100 mb-4 rounded-xl shadow-premium hover:shadow-2xl transition-all duration-500">
-                <motion.img
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.6 }}
+                <ParallaxImage
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full"
                 />
 
                 <motion.div

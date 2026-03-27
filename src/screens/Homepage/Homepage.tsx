@@ -7,18 +7,31 @@ import { Inspiration } from "../../components/Inspiration";
 import { Testimonials } from "../../components/Testimonials";
 import { Newsletter } from "../../components/Newsletter";
 import { Footer } from "../../components/Footer";
+import SectionReveal from "../../components/SectionReveal";
 
 export const Homepage = (): JSX.Element => {
   return (
-    <div className="bg-white w-full">
+    <div className="bg-[#FDFCFB] w-full min-h-screen">
       <Navigation />
       <Hero />
-      <FeaturedCollections />
-      <BestSellers />
-      <About />
-      <Inspiration />
-      <Testimonials />
-      <Newsletter />
+      <SectionReveal>
+        <FeaturedCollections />
+      </SectionReveal>
+      <SectionReveal>
+        <BestSellers />
+      </SectionReveal>
+      <SectionReveal>
+        <About />
+      </SectionReveal>
+      <SectionReveal>
+        <Inspiration />
+      </SectionReveal>
+      <SectionReveal>
+        <Testimonials />
+      </SectionReveal>
+      <SectionReveal>
+        <Newsletter />
+      </SectionReveal>
       <Footer />
     </div>
   );
