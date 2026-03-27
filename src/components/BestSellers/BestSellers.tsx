@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ShoppingCart, Eye } from "lucide-react";
 import { useState } from "react";
+import { Filters } from "../Filters";
+import { LeadCaptureModal } from "../LeadCapture";
 
 const products = [
   {
@@ -11,6 +13,7 @@ const products = [
     image:
       "https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&w=800",
     category: "Seating",
+    isReadyToShip: true,
   },
   {
     id: 2,
@@ -19,6 +22,7 @@ const products = [
     image:
       "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=800",
     category: "Seating",
+    isReadyToShip: false,
   },
   {
     id: 3,
@@ -27,6 +31,7 @@ const products = [
     image:
       "https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&w=800",
     category: "Tables",
+    isReadyToShip: true,
   },
   {
     id: 4,
@@ -35,6 +40,7 @@ const products = [
     image:
       "https://images.pexels.com/photos/1743231/pexels-photo-1743231.jpeg?auto=compress&cs=tinysrgb&w=800",
     category: "Bedroom",
+    isReadyToShip: false,
   },
   {
     id: 5,
@@ -43,6 +49,7 @@ const products = [
     image:
       "https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg?auto=compress&cs=tinysrgb&w=800",
     category: "Storage",
+    isReadyToShip: true,
   },
   {
     id: 6,
@@ -51,11 +58,35 @@ const products = [
     image:
       "https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg?auto=compress&cs=tinysrgb&w=800",
     category: "Tables",
+    isReadyToShip: false,
   },
+  {
+    id: 7,
+    name: "Minimalist Kitchen Island",
+    price: 4599,
+    image: "https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=800",
+    category: "Kitchen",
+    isReadyToShip: false,
+  }
 ];
 
 export const BestSellers = (): JSX.Element => {
   const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<string | undefined>(undefined);
+  const [modalType, setModalType] = useState<'quote' | 'consultation'>('quote');
+
+  const openQuoteModal = (productName: string) => {
+    setSelectedProduct(productName);
+    setModalType('quote');
+    setIsModalOpen(true);
+  };
+
+  const openConsultationModal = () => {
+    setSelectedProduct(undefined);
+    setModalType('consultation');
+    setIsModalOpen(true);
+  };
 
   return (
     <section className="py-24 bg-white">
@@ -70,10 +101,18 @@ export const BestSellers = (): JSX.Element => {
           <h2 className="text-4xl md:text-5xl font-light text-neutral-900 mb-4">
             Best Sellers
           </h2>
-          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+          <p className="text-lg text-neutral-600 max-w-2xl mx-auto mb-8">
             Our most loved pieces, handpicked by our customers
           </p>
+          <button 
+            onClick={openConsultationModal}
+            className="text-sm uppercase tracking-widest font-bold border-b-2 border-neutral-900 pb-1 hover:text-neutral-500 hover:border-neutral-500 transition-all"
+          >
+            Prenota una Consulenza Progettuale
+          </button>
         </motion.div>
+
+        <Filters />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product, index) => (
@@ -120,23 +159,48 @@ export const BestSellers = (): JSX.Element => {
                   </button>
                 </motion.div>
 
-                <span className="absolute top-4 left-4 bg-neutral-900 text-white text-xs font-medium px-3 py-1">
-                  {product.category}
-                </span>
+                <div className="absolute top-4 right-4 flex flex-col gap-2 items-end">
+                  {product.isReadyToShip && (
+                    <motion.span
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      className="bg-green-600 text-white text-[10px] uppercase tracking-widest font-bold px-2 py-1 rounded-sm shadow-lg flex items-center gap-1.5"
+                    >
+                      <span className="relative flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-300 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-green-100"></span>
+                      </span>
+                      Pronta Consegna
+                    </motion.span>
+                  )}
+                  <span className="bg-neutral-900 text-white text-xs font-medium px-3 py-1">
+                    {product.category}
+                  </span>
+                </div>
               </div>
 
-              <div>
-                <Link
-                  to={`/product/${product.id}`}
-                  className="block hover:text-neutral-600 transition-colors duration-200"
-                >
-                  <h3 className="text-lg font-medium text-neutral-900 mb-2">
-                    {product.name}
-                  </h3>
-                </Link>
-                <p className="text-xl font-light text-neutral-900">
-                  ${product.price.toLocaleString()}
-                </p>
+              <div className="flex justify-between items-start">
+                <div>
+                  <Link
+                    to={`/product/${product.id}`}
+                    className="block hover:text-neutral-600 transition-colors duration-200"
+                  >
+                    <h3 className="text-lg font-medium text-neutral-900 mb-1">
+                      {product.name}
+                    </h3>
+                  </Link>
+                  <p className="text-xl font-light text-neutral-900">
+                    €{product.price.toLocaleString()}
+                  </p>
+                </div>
+                {product.category === "Kitchen" || product.price > 2000 ? (
+                  <button 
+                    onClick={() => openQuoteModal(product.name)}
+                    className="text-xs uppercase tracking-tighter font-semibold text-neutral-500 hover:text-neutral-900 transition-colors border-b border-neutral-300 pb-1"
+                  >
+                    Richiedi Preventivo
+                  </button>
+                ) : null}
               </div>
             </motion.div>
           ))}
@@ -157,6 +221,13 @@ export const BestSellers = (): JSX.Element => {
           </Link>
         </motion.div>
       </div>
+
+      <LeadCaptureModal 
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        productName={selectedProduct}
+        type={modalType}
+      />
     </section>
   );
 };

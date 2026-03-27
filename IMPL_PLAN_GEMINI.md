@@ -35,17 +35,17 @@ Establish a clear, intuitive navigation structure based on core furniture catego
 ## 2. Functional Requirements
 Enhance the shopping experience with specific conversion-driven features.
 
-- [ ] **Urgency Badging: "Pronta Consegna"**
-  - [ ] Logic to display "Pronta Consegna" (In Stock) badge on product cards.
-  - [ ] Visual styling for the badge (e.g., green accent/pulse effect for visibility).
-- [ ] **Advanced Filtering System**
-  - [ ] **Material:** Wood, Laminate, Metal, Fabric.
-  - [ ] **Style:** Modern, Classic, Contemporary, Minimalist.
-  - [ ] **Dimensions:** Width, Height, Depth sliders or range toggles.
-- [ ] **Lead Generation (High-Ticket Items)**
-  - [ ] Implementation of "Request a Quote" CTA on Kitchen product pages.
-  - [ ] Implementation of "Book a Design Consultation" CTA for entire room sets.
-  - [ ] Integrated lead capture modal with WhatsApp/Email options.
+- [x] **Urgency Badging: "Pronta Consegna"**
+  - [x] Logic to display "Pronta Consegna" (In Stock) badge on product cards.
+  - [x] Visual styling for the badge (e.g., green accent/pulse effect for visibility).
+- [x] **Advanced Filtering System**
+  - [x] **Material:** Wood, Laminate, Metal, Fabric.
+  - [x] **Style:** Modern, Classic, Contemporary, Minimalist.
+  - [x] **Dimensions:** Width, Height, Depth sliders or range toggles.
+- [x] **Lead Generation (High-Ticket Items)**
+  - [x] Implementation of "Request a Quote" CTA on Kitchen product pages.
+  - [x] Implementation of "Book a Design Consultation" CTA for entire room sets.
+  - [x] Integrated lead capture modal with WhatsApp/Email options.
 
 ---
 
