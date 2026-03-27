@@ -17,10 +17,52 @@ export const Navigation = (): JSX.Element => {
   }, []);
 
   const menuItems = [
-    { name: "Shop", href: "/shop" },
-    { name: "Collections", href: "/collections" },
-    { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
+    {
+      name: "Kitchen",
+      href: "/kitchen",
+      subItems: [
+        { name: "Modern", href: "/kitchen/modern" },
+        { name: "Classic", href: "/kitchen/classic" },
+        { name: "Built-in Appliances", href: "/kitchen/appliances" },
+      ],
+    },
+    {
+      name: "Living",
+      href: "/living",
+      subItems: [
+        { name: "Sofas", href: "/living/sofas" },
+        { name: "Wall Units", href: "/living/wall-units" },
+        { name: "Sideboards", href: "/living/sideboards" },
+        { name: "Dining", href: "/living/dining" },
+      ],
+    },
+    {
+      name: "Bedroom",
+      href: "/bedroom",
+      subItems: [
+        { name: "Adult Sets", href: "/bedroom/adult-sets" },
+        { name: "Children's", href: "/bedroom/childrens" },
+        { name: "Mattresses", href: "/bedroom/mattresses" },
+      ],
+    },
+    {
+      name: "Office",
+      href: "/office",
+      subItems: [
+        { name: "Desks", href: "/office/desks" },
+        { name: "Task Seating", href: "/office/task-seating" },
+        { name: "Storage", href: "/office/storage" },
+      ],
+    },
+    {
+      name: "Utility",
+      href: "/utility",
+      subItems: [
+        { name: "Entryway", href: "/utility/entryway" },
+        { name: "Bathroom", href: "/utility/bathroom" },
+        { name: "Security Doors", href: "/utility/security-doors" },
+      ],
+    },
   ];
 
   return (
@@ -41,14 +83,29 @@ export const Navigation = (): JSX.Element => {
 
           <div className="hidden md:flex items-center space-x-8">
             {menuItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className="text-sm font-medium text-neutral-700 hover:text-neutral-900 transition-colors duration-200 relative group"
-              >
-                {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-neutral-900 group-hover:w-full transition-all duration-300" />
-              </Link>
+              <div key={item.name} className="relative group">
+                <Link
+                  to={item.href}
+                  className="text-sm font-medium text-neutral-700 h-20 flex items-center hover:text-neutral-900 transition-colors duration-200 relative"
+                >
+                  {item.name}
+                  <span className="absolute bottom-4 left-0 w-0 h-0.5 bg-neutral-900 group-hover:w-full transition-all duration-300" />
+                </Link>
+                
+                {item.subItems && (
+                  <div className="absolute top-20 left-1/2 -translate-x-1/2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 bg-white shadow-xl border border-neutral-100 py-2 rounded-lg translate-y-2 group-hover:translate-y-0">
+                    {item.subItems.map((sub) => (
+                      <Link
+                        key={sub.name}
+                        to={sub.href}
+                        className="block px-4 py-2 text-sm text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50 transition-colors"
+                      >
+                        {sub.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
           </div>
 
@@ -96,18 +153,33 @@ export const Navigation = (): JSX.Element => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-white border-t border-neutral-200"
+            className="md:hidden bg-white border-t border-neutral-200 max-h-[calc(100vh-5rem)] overflow-y-auto"
           >
-            <div className="px-4 py-6 space-y-4">
+            <div className="px-4 py-6 space-y-6">
               {menuItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block text-base font-medium text-neutral-700 hover:text-neutral-900 transition-colors duration-200"
-                >
-                  {item.name}
-                </Link>
+                <div key={item.name} className="space-y-3">
+                  <Link
+                    to={item.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block text-lg font-bold text-neutral-900"
+                  >
+                    {item.name}
+                  </Link>
+                  {item.subItems && (
+                    <div className="pl-4 space-y-2 border-l border-neutral-100 ml-1">
+                      {item.subItems.map((sub) => (
+                        <Link
+                          key={sub.name}
+                          to={sub.href}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className="block text-sm text-neutral-600 hover:text-neutral-900"
+                        >
+                          {sub.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
             </div>
           </motion.div>

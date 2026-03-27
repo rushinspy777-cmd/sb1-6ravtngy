@@ -8,27 +8,27 @@
 ## 1. Sitemap & Taxonomy
 Establish a clear, intuitive navigation structure based on core furniture categories.
 
-- [ ] **Kitchen (Cucine)**
-  - [ ] Modern (Moderne)
-  - [ ] Classic (Classiche)
-  - [ ] Built-in Appliances (Elettrodomestici da Incasso)
-- [ ] **Living (Zona Giorno)**
-  - [ ] Sofas (Divani)
-  - [ ] Wall Units (Pareti Attrezzate)
-  - [ ] Sideboards (Madie)
-  - [ ] Dining (Tavoli e Sedie)
-- [ ] **Bedroom (Zona Notte)**
-  - [ ] Adult sets (Camere Matrimoniali)
-  - [ ] Children’s (Camerette)
-  - [ ] Mattresses (Materassi)
-- [ ] **Office (Ufficio)**
-  - [ ] Desks (Scrivanie)
-  - [ ] Task Seating (Sedute Operative)
-  - [ ] Storage (Librerie e Contenitori)
-- [ ] **Utility/Other**
-  - [ ] Entryway (Ingressi)
-  - [ ] Bathroom (Bagno)
-  - [ ] Security Doors (Porte Blindate)
+- [x] **Kitchen (Cucine)**
+  - [x] Modern (Moderne)
+  - [x] Classic (Classiche)
+  - [x] Built-in Appliances (Elettrodomestici da Incasso)
+- [x] **Living (Zona Giorno)**
+  - [x] Sofas (Divani)
+  - [x] Wall Units (Pareti Attrezzate)
+  - [x] Sideboards (Madie)
+  - [x] Dining (Tavoli e Sedie)
+- [x] **Bedroom (Zona Notte)**
+  - [x] Adult sets (Camere Matrimoniali)
+  - [x] Children’s (Camerette)
+  - [x] Mattresses (Materassi)
+- [x] **Office (Ufficio)**
+  - [x] Desks (Scrivanie)
+  - [x] Task Seating (Sedute Operative)
+  - [x] Storage (Librerie e Contenitori)
+- [x] **Utility/Other**
+  - [x] Entryway (Ingressi)
+  - [x] Bathroom (Bagno)
+  - [x] Security Doors (Porte Blindate)
 
 ---
 
