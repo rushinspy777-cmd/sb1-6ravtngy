@@ -75,16 +75,16 @@ A structured roadmap for technical execution.
 ## 4. Performance Goals
 Ensuring a seamless and fast experience for high-resolution assets.
 
-- [ ] **Mobile Responsiveness**
-  - [ ] Mobile-first navigation (Sticky bottom menu or optimized drawer).
-  - [ ] Touch-friendly product filters and gallery swipes.
-- [ ] **Image Optimization**
-  - [ ] Implement NextGen formats (WebP/AVIF) for furniture galleries.
-  - [ ] Lazy loading for off-screen product images.
-  - [ ] Adaptive image sizing based on device DPI.
-- [ ] **SEO & Load Speed**
-  - [ ] Optimize First Contentful Paint (FCP) below 1.5s.
-  - [ ] Semantic HTML5 for product hierarchy (H1 categories, Schema.org markup).
+- [x] **Mobile Responsiveness**
+  - [x] Mobile-first navigation (Sticky bottom menu or optimized drawer).
+  - [x] Touch-friendly product filters and gallery swipes.
+- [x] **Image Optimization**
+  - [x] Implement NextGen formats (WebP/AVIF) for furniture galleries.
+  - [x] Lazy loading for off-screen product images.
+  - [x] Adaptive image sizing based on device DPI.
+- [x] **SEO & Load Speed**
+  - [x] Optimize First Contentful Paint (FCP) below 1.5s.
+  - [x] Semantic HTML5 for product hierarchy (H1 categories, Schema.org markup).
 
 ---
 

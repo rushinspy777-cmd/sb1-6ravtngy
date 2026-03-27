@@ -58,18 +58,18 @@ export const Filters = () => {
                 <h4 className="text-sm font-bold uppercase tracking-wider mb-4 text-neutral-900">Materiale</h4>
                 <div className="space-y-2">
                   {materials.map(material => (
-                    <label key={material} className="flex items-center gap-3 cursor-pointer group">
+                    <label key={material} className="flex items-center gap-3 cursor-pointer group py-2 hover:bg-neutral-50 px-2 rounded-md transition-all active:scale-[0.98]">
                       <div 
                         onClick={() => toggleFilter('materials', material)}
-                        className={`w-5 h-5 border flex items-center justify-center transition-colors ${
+                        className={`w-6 h-6 border flex items-center justify-center transition-colors ${
                           activeFilters.materials.includes(material) 
                             ? 'bg-neutral-900 border-neutral-900' 
                             : 'border-neutral-300 group-hover:border-neutral-400'
                         }`}
                       >
-                        {activeFilters.materials.includes(material) && <Check className="w-3 h-3 text-white" />}
+                        {activeFilters.materials.includes(material) && <Check className="w-4 h-4 text-white" />}
                       </div>
-                      <span className="text-neutral-600 group-hover:text-neutral-900 transition-colors">{material}</span>
+                      <span className="text-neutral-600 group-hover:text-neutral-900 transition-colors font-medium">{material}</span>
                     </label>
                   ))}
                 </div>
@@ -78,20 +78,20 @@ export const Filters = () => {
               {/* Styles */}
               <div>
                 <h4 className="text-sm font-bold uppercase tracking-wider mb-4 text-neutral-900">Stile</h4>
-                <div className="space-y-2">
+                <div className="space-y-1">
                   {styles.map(style => (
-                    <label key={style} className="flex items-center gap-3 cursor-pointer group">
+                    <label key={style} className="flex items-center gap-3 cursor-pointer group py-2 hover:bg-neutral-50 px-2 rounded-md transition-all active:scale-[0.98]">
                       <div 
                         onClick={() => toggleFilter('styles', style)}
-                        className={`w-5 h-5 border flex items-center justify-center transition-colors ${
+                        className={`w-6 h-6 border flex items-center justify-center transition-colors ${
                           activeFilters.styles.includes(style) 
                             ? 'bg-neutral-900 border-neutral-900' 
                             : 'border-neutral-300 group-hover:border-neutral-400'
                         }`}
                       >
-                        {activeFilters.styles.includes(style) && <Check className="w-3 h-3 text-white" />}
+                        {activeFilters.styles.includes(style) && <Check className="w-4 h-4 text-white" />}
                       </div>
-                      <span className="text-neutral-600 group-hover:text-neutral-900 transition-colors">{style}</span>
+                      <span className="text-neutral-600 group-hover:text-neutral-900 transition-colors font-medium">{style}</span>
                     </label>
                   ))}
                 </div>

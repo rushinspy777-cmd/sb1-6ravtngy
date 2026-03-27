@@ -35,6 +35,8 @@ export const ProductCard = ({ product, onQuoteRequest }: ProductCardProps) => {
                     transition={{ duration: 0.6 }}
                     src={product.image}
                     alt={product.name}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover"
                 />
 
