@@ -53,22 +53,22 @@ Enhance the shopping experience with specific conversion-driven features.
 A structured roadmap for technical execution.
 
 ### Phase 1: Core Architecture & Navigation Setup
-- [ ] Initialize project with React, Vite, and Tailwind CSS.
-- [ ] Implement responsive Mega-Menu navigation for all 5 pillars.
-- [ ] Setup Breadcrumb logic for deep category nesting.
-- [ ] Configure Supabase/Database schema for Product categories.
+- [x] Initialize project with React, Vite, and Tailwind CSS.
+- [x] Implement responsive Mega-Menu navigation for all 5 pillars.
+- [x] Setup Breadcrumb logic for deep category nesting.
+- [x] Configure Supabase/Database schema for Product categories.
 
 ### Phase 2: Product Data Mapping & Templating
-- [ ] Design "Bulky Furniture" product page template (High-res gallery focus).
-- [ ] Map product data fields: Dimensions, Technical Specs, Material variants.
-- [ ] Create reusable ProductCard component with Urgency Badge support.
-- [ ] Implement dynamic routing for categories and sub-categories.
+- [x] Design "Bulky Furniture" product page template (High-res gallery focus).
+- [x] Map product data fields: Dimensions, Technical Specs, Material variants.
+- [x] Create reusable ProductCard component with Urgency Badge support.
+- [x] Implement dynamic routing for categories and sub-categories.
 
 ### Phase 3: "Outlet" & "Promo" Logic
-- [ ] Implement Discount Badge logic (Percentage vs. Fixed amount).
-- [ ] Create a dedicated "Outlet" section for clearance items.
-- [ ] Add "Flash Sale" countdown components for promotional periods.
-- [ ] Finalize "Value for Money" messaging across the UI (e.g., "Best Price Guaranteed" badges).
+- [x] Implement Discount Badge logic (Percentage vs. Fixed amount).
+- [x] Create a dedicated "Outlet" section for clearance items.
+- [x] Add "Flash Sale" countdown components for promotional periods.
+- [x] Finalize "Value for Money" messaging across the UI (e.g., "Best Price Guaranteed" badges).
 
 ---
 
