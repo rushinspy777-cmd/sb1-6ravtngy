@@ -67,7 +67,7 @@ export const FeaturedCollections = (): JSX.Element => {
             >
               <Link
                 to={collection.href}
-                className="group block relative overflow-hidden bg-white"
+                className="group block relative overflow-hidden bg-white rounded-lg"
               >
                 <div className="relative aspect-[3/4] overflow-hidden">
                   <motion.img
@@ -77,19 +77,23 @@ export const FeaturedCollections = (): JSX.Element => {
                     alt={collection.title}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                  {/* Hover overlay brightness reduction */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
                 </div>
 
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 to-transparent">
-                  <h3 className="text-2xl font-semibold text-white mb-1">
+                {/* Bottom Overlay Gradient - covering 50% for legibility */}
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[rgba(0,0,0,0.72)] to-transparent pointer-events-none" />
+
+                <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+                  <h3 className="text-[22px] font-bold font-serif text-white mb-1 tracking-tight">
                     {collection.title}
                   </h3>
-                  <p className="text-white/90 text-sm mb-3">
+                  <p className="font-nunito font-light text-[13px] text-white/80 mb-4 tracking-normal">
                     {collection.description}
                   </p>
-                  <div className="flex items-center text-white text-sm font-medium">
+                  <div className="flex items-center text-white text-[13px] font-semibold font-nunito tracking-[0.08em] uppercase">
                     Esplora
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
+                    <ArrowRight className="ml-1 w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform duration-300" />
                   </div>
                 </div>
               </Link>

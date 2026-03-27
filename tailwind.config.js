@@ -97,6 +97,10 @@ module.exports = {
           "Georgia",
           "serif",
         ],
+        nunito: [
+          '"Nunito"',
+          "sans-serif",
+        ],
       },
       keyframes: {
         "accordion-down": {
