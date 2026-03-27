@@ -33,11 +33,11 @@ export const FlashSaleCountdown = ({ endDate }: CountdownProps) => {
 
     return (
         <div className="flex items-center gap-4 bg-red-600 text-white px-6 py-3 rounded-sm shadow-xl animate-pulse">
-            <span className="text-xs uppercase tracking-[0.2em] font-bold">Outlet Expiring:</span>
+            <span className="text-xs uppercase tracking-[0.2em] font-bold">Scadenza Outlet:</span>
             <div className="flex gap-3 text-lg font-mono font-bold">
                 <div className="flex flex-col items-center">
                     <span>{String(timeLeft.hours).padStart(2, "0")}</span>
-                    <span className="text-[8px] uppercase tracking-tighter opacity-70">Hrs</span>
+                    <span className="text-[8px] uppercase tracking-tighter opacity-70">Ore</span>
                 </div>
                 <span>:</span>
                 <div className="flex flex-col items-center">

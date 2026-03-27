@@ -12,7 +12,7 @@ const products = [
     price: 1299,
     image:
       "https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: "Seating",
+    category: "Sedute",
     isReadyToShip: true,
   },
   {
@@ -21,7 +21,7 @@ const products = [
     price: 2899,
     image:
       "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: "Seating",
+    category: "Sedute",
     isReadyToShip: false,
   },
   {
@@ -30,7 +30,7 @@ const products = [
     price: 1899,
     image:
       "https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: "Tables",
+    category: "Tavoli",
     isReadyToShip: true,
   },
   {
@@ -39,7 +39,7 @@ const products = [
     price: 2199,
     image:
       "https://images.pexels.com/photos/1743231/pexels-photo-1743231.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: "Bedroom",
+    category: "Zona Notte",
     isReadyToShip: false,
   },
   {
@@ -48,7 +48,7 @@ const products = [
     price: 899,
     image:
       "https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: "Storage",
+    category: "Contenitori",
     isReadyToShip: true,
   },
   {
@@ -57,7 +57,7 @@ const products = [
     price: 799,
     image:
       "https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: "Tables",
+    category: "Tavoli",
     isReadyToShip: false,
   },
   {
@@ -65,7 +65,7 @@ const products = [
     name: "Minimalist Kitchen Island",
     price: 4599,
     image: "https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=800",
-    category: "Kitchen",
+    category: "Cucina",
     isReadyToShip: false,
   }
 ];
@@ -99,10 +99,10 @@ export const BestSellers = (): JSX.Element => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-light text-neutral-900 mb-4">
-            Best Sellers
+            I più Venduti
           </h2>
           <p className="text-lg text-neutral-600 max-w-2xl mx-auto mb-8">
-            Our most loved pieces, handpicked by our customers
+            I nostri pezzi più amati, scelti dai nostri clienti
           </p>
           <button 
             onClick={openConsultationModal}
@@ -146,14 +146,14 @@ export const BestSellers = (): JSX.Element => {
                   <Link
                     to={`/product/${product.id}`}
                     className="bg-white p-3 rounded-full hover:bg-neutral-100 transition-colors duration-200"
-                    aria-label="Quick view"
+                    aria-label="Anteprima rapida"
                   >
                     <Eye className="w-5 h-5 text-neutral-900" />
                   </Link>
                   <button
                     onClick={() => {}}
                     className="bg-white p-3 rounded-full hover:bg-neutral-100 transition-colors duration-200"
-                    aria-label="Add to cart"
+                    aria-label="Aggiungi al carrello"
                   >
                     <ShoppingCart className="w-5 h-5 text-neutral-900" />
                   </button>
@@ -193,7 +193,7 @@ export const BestSellers = (): JSX.Element => {
                     €{product.price.toLocaleString()}
                   </p>
                 </div>
-                {product.category === "Kitchen" || product.price > 2000 ? (
+                {product.category === "Cucina" || product.price > 2000 ? (
                   <button 
                     onClick={() => openQuoteModal(product.name)}
                     className="text-xs uppercase tracking-tighter font-semibold text-neutral-500 hover:text-neutral-900 transition-colors border-b border-neutral-300 pb-1"
@@ -217,7 +217,7 @@ export const BestSellers = (): JSX.Element => {
             to="/shop"
             className="inline-flex items-center justify-center px-8 py-4 border-2 border-neutral-900 text-neutral-900 font-medium hover:bg-neutral-900 hover:text-white transition-all duration-300"
           >
-            View All Products
+            Vedi tutti i prodotti
           </Link>
         </motion.div>
       </div>

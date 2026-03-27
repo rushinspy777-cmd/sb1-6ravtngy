@@ -7,7 +7,7 @@ const testimonials = [
     name: "Sarah Mitchell",
     role: "Interior Designer",
     content:
-      "AM Mida's furniture transformed my client's space completely. The quality is exceptional, and the attention to detail is unmatched. Every piece feels like a work of art.",
+      "Gli arredi di AM Mida hanno trasformato completamente lo spazio del mio cliente. La qualità è eccezionale e l'attenzione ai dettagli è senza pari. Ogni pezzo sembra un'opera d'arte.",
     rating: 5,
     image:
       "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=200",
@@ -15,9 +15,9 @@ const testimonials = [
   {
     id: 2,
     name: "Michael Chen",
-    role: "Homeowner",
+    role: "Proprietario di casa",
     content:
-      "I've been searching for the perfect dining table for months. The Stockholm table exceeded all my expectations. It's beautiful, sturdy, and the craftsmanship is phenomenal.",
+      "Cercavo il tavolo da pranzo perfetto da mesi. Il tavolo Stockholm ha superato tutte le mie aspettative. È bellissimo, robusto e l'artigianato è fenomenale.",
     rating: 5,
     image:
       "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=200",
@@ -25,9 +25,9 @@ const testimonials = [
   {
     id: 3,
     name: "Emma Rodriguez",
-    role: "Architect",
+    role: "Architetto",
     content:
-      "As an architect, I appreciate design that stands the test of time. AM Mida delivers exactly that. Their pieces are investment-worthy and incredibly versatile.",
+      "Come architetto, apprezzo il design che resiste alla prova del tempo. AM Mida offre esattamente questo. I loro pezzi sono degni di investimento e incredibilmente versatili.",
     rating: 5,
     image:
       "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=200",
@@ -46,11 +46,11 @@ export const Testimonials = (): JSX.Element => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-light text-neutral-900 mb-4">
-            What Our Customers Say
+            Cosa dicono i nostri clienti
           </h2>
           <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-            Join thousands of satisfied customers who have transformed their
-            spaces
+            Unisciti a migliaia di clienti soddisfatti che hanno trasformato i
+            loro spazi
           </p>
         </motion.div>
 
@@ -106,17 +106,17 @@ export const Testimonials = (): JSX.Element => {
           <div className="flex items-center justify-center gap-8 text-neutral-600">
             <div>
               <div className="text-3xl font-light text-neutral-900">4.9/5</div>
-              <div className="text-sm">Average Rating</div>
+              <div className="text-sm">Valutazione Media</div>
             </div>
             <div className="w-px h-12 bg-neutral-300" />
             <div>
               <div className="text-3xl font-light text-neutral-900">2,500+</div>
-              <div className="text-sm">Happy Customers</div>
+              <div className="text-sm">Clienti Soddisfatti</div>
             </div>
             <div className="w-px h-12 bg-neutral-300" />
             <div>
               <div className="text-3xl font-light text-neutral-900">98%</div>
-              <div className="text-sm">Satisfaction Rate</div>
+              <div className="text-sm">Tasso di Soddisfazione</div>
             </div>
           </div>
         </motion.div>

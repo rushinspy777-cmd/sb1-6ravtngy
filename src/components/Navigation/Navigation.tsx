@@ -18,49 +18,49 @@ export const Navigation = (): JSX.Element => {
 
   const menuItems = [
     {
-      name: "Kitchen",
+      name: "Cucina",
       href: "/kitchen",
       subItems: [
-        { name: "Modern", href: "/kitchen/modern" },
-        { name: "Classic", href: "/kitchen/classic" },
-        { name: "Built-in Appliances", href: "/kitchen/appliances" },
+        { name: "Moderno", href: "/kitchen/modern" },
+        { name: "Classico", href: "/kitchen/classic" },
+        { name: "Elettrodomestici da incasso", href: "/kitchen/appliances" },
       ],
     },
     {
-      name: "Living",
+      name: "Zona Giorno",
       href: "/living",
       subItems: [
-        { name: "Sofas", href: "/living/sofas" },
-        { name: "Wall Units", href: "/living/wall-units" },
-        { name: "Sideboards", href: "/living/sideboards" },
-        { name: "Dining", href: "/living/dining" },
+        { name: "Divani", href: "/living/sofas" },
+        { name: "Pareti Attrezzate", href: "/living/wall-units" },
+        { name: "Madie e Credenze", href: "/living/sideboards" },
+        { name: "Tavoli e Sedie", href: "/living/dining" },
       ],
     },
     {
-      name: "Bedroom",
+      name: "Zona Notte",
       href: "/bedroom",
       subItems: [
-        { name: "Adult Sets", href: "/bedroom/adult-sets" },
-        { name: "Children's", href: "/bedroom/childrens" },
-        { name: "Mattresses", href: "/bedroom/mattresses" },
+        { name: "Camere Matrimoniali", href: "/bedroom/adult-sets" },
+        { name: "Camerette", href: "/bedroom/childrens" },
+        { name: "Materassi", href: "/bedroom/mattresses" },
       ],
     },
     {
-      name: "Office",
+      name: "Ufficio",
       href: "/office",
       subItems: [
-        { name: "Desks", href: "/office/desks" },
-        { name: "Task Seating", href: "/office/task-seating" },
-        { name: "Storage", href: "/office/storage" },
+        { name: "Scrivanie", href: "/office/desks" },
+        { name: "Sedute Operative", href: "/office/task-seating" },
+        { name: "Librerie e Contenitori", href: "/office/storage" },
       ],
     },
     {
-      name: "Utility",
+      name: "Complementi",
       href: "/utility",
       subItems: [
-        { name: "Entryway", href: "/utility/entryway" },
-        { name: "Bathroom", href: "/utility/bathroom" },
-        { name: "Security Doors", href: "/utility/security-doors" },
+        { name: "Ingressi", href: "/utility/entryway" },
+        { name: "Bagno", href: "/utility/bathroom" },
+        { name: "Porte Blindate", href: "/utility/security-doors" },
       ],
     },
   ];
@@ -113,7 +113,7 @@ export const Navigation = (): JSX.Element => {
             <button
               onClick={() => { }}
               className="text-neutral-700 hover:text-neutral-900 transition-colors duration-200"
-              aria-label="Search"
+              aria-label="Cerca"
             >
               <Search className="w-5 h-5" />
             </button>
@@ -121,7 +121,7 @@ export const Navigation = (): JSX.Element => {
             <Link
               to="/cart"
               className="relative text-neutral-700 hover:text-neutral-900 transition-colors duration-200"
-              aria-label="Shopping cart"
+              aria-label="Carrello"
             >
               <ShoppingCart className="w-5 h-5" />
               {cartCount > 0 && (

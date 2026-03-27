@@ -4,24 +4,24 @@ import { Link } from "react-router-dom";
 const inspirations = [
   {
     id: 1,
-    title: "Scandinavian Minimalism",
-    description: "Clean lines, natural light, and functional beauty",
+    title: "Minimalismo Scandinavo",
+    description: "Linee pulite, luce naturale e bellezza funzionale",
     image:
       "https://images.pexels.com/photos/1034584/pexels-photo-1034584.jpeg?auto=compress&cs=tinysrgb&w=1200",
     size: "large",
   },
   {
     id: 2,
-    title: "Modern Comfort",
-    description: "Where style meets relaxation",
+    title: "Comfort Moderno",
+    description: "Dove lo stile incontra il relax",
     image:
       "https://images.pexels.com/photos/2343468/pexels-photo-2343468.jpeg?auto=compress&cs=tinysrgb&w=800",
     size: "small",
   },
   {
     id: 3,
-    title: "Timeless Elegance",
-    description: "Classic designs for contemporary living",
+    title: "Eleganza Senza Tempo",
+    description: "Design classici per il vivere contemporaneo",
     image:
       "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800",
     size: "small",
@@ -40,10 +40,10 @@ export const Inspiration = (): JSX.Element => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-light text-neutral-900 mb-4">
-            Design Inspiration
+            Ispirazione di Design
           </h2>
           <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-            Explore curated spaces that blend aesthetics with functionality
+            Esplora spazi curati che fondono estetica e funzionalità
           </p>
         </motion.div>
 
@@ -89,7 +89,7 @@ export const Inspiration = (): JSX.Element => {
                       {item.description}
                     </p>
                     <div className="mt-4 inline-block text-white text-sm font-medium group-hover:translate-x-2 transition-transform duration-300">
-                      Explore →
+                      Esplora →
                     </div>
                   </div>
                 </div>

@@ -33,11 +33,12 @@ export const Newsletter = (): JSX.Element => {
             >
               <Mail className="w-12 h-12 text-white mx-auto mb-6" />
               <h2 className="text-3xl md:text-4xl font-light text-white mb-4">
-                Stay Inspired
+                Rimani Ispirato
               </h2>
               <p className="text-lg text-white/80 mb-8">
-                Subscribe to receive exclusive offers, design tips, and new
-                collection updates directly to your inbox.
+                Iscriviti per ricevere offerte esclusive, consigli di design e
+                aggiornamenti sulle nuove collezioni direttamente nella tua
+                casella di posta.
               </p>
 
               {isSubmitted ? (
@@ -46,8 +47,8 @@ export const Newsletter = (): JSX.Element => {
                   animate={{ opacity: 1, scale: 1 }}
                   className="bg-white/10 border border-white/20 text-white py-4 px-6 rounded"
                 >
-                  Thank you for subscribing! Check your inbox for a welcome
-                  gift.
+                  Grazie per esserti iscritto! Controlla la tua casella di posta
+                  per un regalo di benvenuto.
                 </motion.div>
               ) : (
                 <form
@@ -59,7 +60,7 @@ export const Newsletter = (): JSX.Element => {
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      placeholder="Enter your email"
+                      placeholder="Inserisci la tua email"
                       required
                       className="w-full px-6 py-4 bg-white text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-white/50"
                     />
@@ -70,10 +71,10 @@ export const Newsletter = (): JSX.Element => {
                     className="group inline-flex items-center justify-center px-8 py-4 bg-white text-neutral-900 font-medium hover:bg-neutral-100 transition-all duration-300 disabled:opacity-50"
                   >
                     {isLoading ? (
-                      "Subscribing..."
+                      "Iscrizione..."
                     ) : (
                       <>
-                        Subscribe
+                        Iscriviti
                         <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                       </>
                     )}
@@ -82,7 +83,7 @@ export const Newsletter = (): JSX.Element => {
               )}
 
               <p className="text-sm text-white/60 mt-4">
-                We respect your privacy. Unsubscribe at any time.
+                Rispettiamo la tua privacy. Disiscriviti in qualsiasi momento.
               </p>
             </motion.div>
           </div>

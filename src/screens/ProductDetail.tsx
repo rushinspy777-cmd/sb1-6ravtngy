@@ -12,9 +12,9 @@ const products = {
         id: "1",
         name: "Oslo Lounge Chair",
         price: 1299,
-        category: "Living",
-        sub_category: "Sofas",
-        description: "A contemporary lounge chair with clean lines and exceptional comfort. Features premium upholstery and solid wood frame. Perfect for minimalist and modern interiors.",
+        category: "Zona Giorno",
+        sub_category: "Divani",
+        description: "Una poltrona contemporanea dalle linee pulite e dal comfort eccezionale. Caratterizzata da rivestimenti di pregio e struttura in legno massello. Perfetta per interni minimalisti e moderni.",
         images: [
             "https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&w=800",
             "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -25,7 +25,7 @@ const products = {
             dimensions: "80 x 85 x 75 cm",
             material: "Rovere Massello, Tessuto Tecnico",
             origin: "Made in Italy",
-            warranty: "5 Years"
+            warranty: "5 Anni"
         },
         isReadyToShip: true,
     }

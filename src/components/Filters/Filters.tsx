@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SlidersHorizontal, Check } from 'lucide-react';
 
-const materials = ['Wood', 'Laminate', 'Metal', 'Fabric'];
-const styles = ['Modern', 'Classic', 'Contemporary', 'Minimalist'];
+const materials = ['Legno', 'Laminato', 'Metallo', 'Tessuto'];
+const styles = ['Moderno', 'Classico', 'Contemporaneo', 'Minimalista'];
 
 export const Filters = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -101,24 +101,31 @@ export const Filters = () => {
               <div className="md:col-span-2">
                 <h4 className="text-sm font-bold uppercase tracking-wider mb-4 text-neutral-900">Dimensioni (cm)</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                  {Object.entries(activeFilters.dimensions).map(([key]) => (
-                    <div key={key}>
-                      <span className="text-xs text-neutral-500 capitalize">{key}</span>
-                      <div className="flex items-center gap-2 mt-2">
-                        <input 
-                          type="number" 
-                          placeholder="Min" 
-                          className="w-full border border-neutral-200 px-2 py-1 text-sm focus:outline-none focus:border-neutral-900"
-                        />
-                        <span className="text-neutral-300">-</span>
-                        <input 
-                          type="number" 
-                          placeholder="Max" 
-                          className="w-full border border-neutral-200 px-2 py-1 text-sm focus:outline-none focus:border-neutral-900"
-                        />
+                  {Object.entries(activeFilters.dimensions).map(([key]) => {
+                    const labels: Record<string, string> = {
+                      width: 'Larghezza',
+                      height: 'Altezza',
+                      depth: 'Profondità'
+                    };
+                    return (
+                      <div key={key}>
+                        <span className="text-xs text-neutral-500 capitalize">{labels[key] || key}</span>
+                        <div className="flex items-center gap-2 mt-2">
+                          <input 
+                            type="number" 
+                            placeholder="Min" 
+                            className="w-full border border-neutral-200 px-2 py-1 text-sm focus:outline-none focus:border-neutral-900"
+                          />
+                          <span className="text-neutral-300">-</span>
+                          <input 
+                            type="number" 
+                            placeholder="Max" 
+                            className="w-full border border-neutral-200 px-2 py-1 text-sm focus:outline-none focus:border-neutral-900"
+                          />
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
                 <div className="mt-8 flex justify-end">
                    <button className="bg-neutral-900 text-white px-6 py-2 text-sm font-medium hover:bg-neutral-800 transition-colors">

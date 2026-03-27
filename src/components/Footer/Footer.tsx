@@ -1,37 +1,37 @@
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin, Clock } from "lucide-react";
 
 export const Footer = (): JSX.Element => {
   const currentYear = new Date().getFullYear();
 
   const shopLinks = [
-    { name: "All Products", href: "/shop" },
-    { name: "Living Room", href: "/collections/living-room" },
-    { name: "Bedroom", href: "/collections/bedroom" },
-    { name: "Dining", href: "/collections/dining" },
-    { name: "Office", href: "/collections/office" },
+    { name: "Tutti i Prodotti", href: "/shop" },
+    { name: "Zona Giorno", href: "/collections/living-room" },
+    { name: "Zona Notte", href: "/collections/bedroom" },
+    { name: "Sala da Pranzo", href: "/collections/dining" },
+    { name: "Ufficio", href: "/collections/office" },
   ];
 
   const companyLinks = [
-    { name: "About Us", href: "/about" },
-    { name: "Our Story", href: "/story" },
-    { name: "Craftsmanship", href: "/craftsmanship" },
-    { name: "Sustainability", href: "/sustainability" },
-    { name: "Careers", href: "/careers" },
+    { name: "Chi Siamo", href: "/about" },
+    { name: "La Nostra Storia", href: "/story" },
+    { name: "Artigianato", href: "/craftsmanship" },
+    { name: "Sostenibilità", href: "/sustainability" },
+    { name: "Lavora con Noi", href: "/careers" },
   ];
 
   const customerServiceLinks = [
-    { name: "Contact Us", href: "/contact" },
-    { name: "Shipping & Returns", href: "/shipping" },
-    { name: "Care Guide", href: "/care-guide" },
-    { name: "Warranty", href: "/warranty" },
-    { name: "FAQ", href: "/faq" },
+    { name: "Contattaci", href: "/contact" },
+    { name: "Spedizioni e Resi", href: "/shipping" },
+    { name: "Guida alla Cura", href: "/care-guide" },
+    { name: "Garanzia", href: "/warranty" },
+    { name: "Domande Frequenti", href: "/faq" },
   ];
 
   const legalLinks = [
-    { name: "Privacy Policy", href: "/privacy" },
-    { name: "Terms of Service", href: "/terms" },
-    { name: "Cookie Policy", href: "/cookies" },
+    { name: "Informativa sulla Privacy", href: "/privacy" },
+    { name: "Termini di Servizio", href: "/terms" },
+    { name: "Informativa sui Cookie", href: "/cookies" },
   ];
 
   return (
@@ -40,44 +40,63 @@ export const Footer = (): JSX.Element => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           <div className="lg:col-span-2">
             <Link to="/" className="inline-block mb-6">
-              <span className="text-2xl font-bold tracking-tight">AM MIDA</span>
+              <span className="text-2xl font-bold tracking-tight">AM Mida</span>
             </Link>
             <p className="text-white/70 mb-6 leading-relaxed">
-              Crafting exceptional furniture with timeless design and
-              sustainable materials. Transform your space with pieces built to
-              last generations.
+              Qualità e risparmio hanno trovato Casa. Fondata nel 1966, AM Mida è oggi uno dei marchi italiani più affidabili nel settore dell'arredamento.
             </p>
 
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-white/70 mt-0.5 flex-shrink-0" />
                 <span className="text-white/70 text-sm">
-                  123 Design Street, New York, NY 10001
+                  Via San Pio X – 63 , 84043 Agropoli (SA)
                 </span>
               </div>
-              <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-white/70 flex-shrink-0" />
-                <a
-                  href="tel:+1234567890"
-                  className="text-white/70 text-sm hover:text-white transition-colors"
-                >
-                  +1 (234) 567-890
-                </a>
+              <div className="flex flex-col gap-1">
+                <div className="flex items-center gap-3">
+                  <Phone className="w-5 h-5 text-white/70 flex-shrink-0" />
+                  <a
+                    href="tel:+390974829334"
+                    className="text-white/70 text-sm hover:text-white transition-colors"
+                  >
+                    +39 0974 829334
+                  </a>
+                </div>
+                <div className="flex items-center gap-3 ml-8">
+                  <span className="text-white/50 text-[10px] uppercase tracking-widest font-bold">WhatsApp:</span>
+                  <a
+                    href="https://wa.me/393338840807"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white/70 text-sm hover:text-white transition-colors"
+                  >
+                    +39 333 8840807
+                  </a>
+                </div>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-white/70 flex-shrink-0" />
                 <a
-                  href="mailto:hello@ammida.com"
+                  href="mailto:info.ammidaarredo@gmail.com"
                   className="text-white/70 text-sm hover:text-white transition-colors"
                 >
-                  hello@ammida.com
+                  info.ammidaarredo@gmail.com
                 </a>
+              </div>
+              <div className="flex items-start gap-3 pt-4 border-t border-white/5">
+                <Clock className="w-5 h-5 text-white/70 mt-0.5 flex-shrink-0" />
+                <div className="text-white/70 text-sm italic">
+                  <p className="font-medium not-italic">Aperti dal Lunedì al Sabato</p>
+                  <p>Mattino: 09:00 / 13:00</p>
+                  <p>Pomeriggio: 16:00 / 20:00</p>
+                </div>
               </div>
             </div>
           </div>
 
           <div>
-            <h3 className="font-semibold text-white mb-4">Shop</h3>
+            <h3 className="font-semibold text-white mb-4">Negozio</h3>
             <ul className="space-y-3">
               {shopLinks.map((link) => (
                 <li key={link.name}>
@@ -93,7 +112,7 @@ export const Footer = (): JSX.Element => {
           </div>
 
           <div>
-            <h3 className="font-semibold text-white mb-4">Company</h3>
+            <h3 className="font-semibold text-white mb-4">Azienda</h3>
             <ul className="space-y-3">
               {companyLinks.map((link) => (
                 <li key={link.name}>
@@ -109,7 +128,7 @@ export const Footer = (): JSX.Element => {
           </div>
 
           <div>
-            <h3 className="font-semibold text-white mb-4">Customer Service</h3>
+            <h3 className="font-semibold text-white mb-4">Servizio Clienti</h3>
             <ul className="space-y-3">
               {customerServiceLinks.map((link) => (
                 <li key={link.name}>
@@ -181,7 +200,7 @@ export const Footer = (): JSX.Element => {
 
           <div className="text-center md:text-left mt-6">
             <p className="text-white/60 text-sm">
-              © {currentYear} AM Mida. All rights reserved.
+              © {currentYear} AM Mida. Tutti i diritti riservati.
             </p>
           </div>
         </div>

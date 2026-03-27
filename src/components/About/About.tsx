@@ -29,57 +29,55 @@ export const About = (): JSX.Element => {
             className="space-y-6"
           >
             <h2 className="text-4xl md:text-5xl font-light text-neutral-900 leading-tight">
-              Crafted with Care,
+              Qualità e Risparmio
               <br />
-              <span className="font-semibold">Built to Last</span>
+              <span className="font-semibold">hanno trovato Casa</span>
             </h2>
 
             <div className="space-y-4 text-neutral-600 leading-relaxed">
               <p className="text-lg">
-                At AM Mida, we believe that furniture is more than just
-                functional objects. Each piece tells a story of exceptional
-                craftsmanship, sustainable materials, and timeless design.
+                Fondata nel 1966 da un piccolo laboratorio artigianale, AM Mida è
+                oggi uno dei marchi italiani più affidabili nel settore dell'arredamento,
+                con oltre mezzo secolo di storia, due showroom in Campania e più di
+                4.500 mq tra esposizione e deposito.
               </p>
 
               <p>
-                Our artisans combine traditional techniques with modern
-                innovation, creating furniture that transforms houses into
-                homes. Every detail is carefully considered, from the selection
-                of premium hardwoods to the hand-finished surfaces that bear the
-                mark of human touch.
+                Progettata con la collaborazione di architetti e designer italiani,
+                ogni collezione nasce dalla ricerca continua, dall'eleganza delle forme
+                e dall'attenzione ai dettagli — per soddisfare ogni stile di vita,
+                a un prezzo giusto.
               </p>
 
               <p>
-                We source our materials responsibly, ensuring that beauty and
-                sustainability go hand in hand. Our commitment to quality means
-                that each piece is built to be cherished for generations,
-                developing character and warmth with time.
+                Insigniti del Premio Compasso d'Oro nel 1998.
+                L'avventura continua.
               </p>
             </div>
 
             <div className="grid grid-cols-3 gap-8 pt-8">
               <div>
                 <div className="text-4xl font-light text-neutral-900 mb-2">
-                  25+
+                  60+
                 </div>
                 <div className="text-sm text-neutral-600">
-                  Years of Expertise
+                  Anni di Esperienza
                 </div>
               </div>
               <div>
                 <div className="text-4xl font-light text-neutral-900 mb-2">
-                  100%
+                  2
                 </div>
                 <div className="text-sm text-neutral-600">
-                  Sustainable Materials
+                  Showroom in Campania
                 </div>
               </div>
               <div>
                 <div className="text-4xl font-light text-neutral-900 mb-2">
-                  500+
+                  4.500+
                 </div>
                 <div className="text-sm text-neutral-600">
-                  Unique Designs
+                  mq di Esposizione
                 </div>
               </div>
             </div>
@@ -89,7 +87,7 @@ export const About = (): JSX.Element => {
                 to="/about"
                 className="inline-flex items-center justify-center px-8 py-4 bg-neutral-900 text-white font-medium hover:bg-neutral-800 transition-all duration-300"
               >
-                Our Story
+                La Nostra Storia
               </Link>
             </div>
           </motion.div>

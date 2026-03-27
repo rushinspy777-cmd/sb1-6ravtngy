@@ -5,32 +5,32 @@ import { ArrowRight } from "lucide-react";
 const collections = [
   {
     id: 1,
-    title: "Living Room",
-    description: "Sophisticated comfort",
+    title: "Zona Giorno",
+    description: "Comfort sofisticato",
     image:
       "https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg?auto=compress&cs=tinysrgb&w=800",
     href: "/collections/living-room",
   },
   {
     id: 2,
-    title: "Bedroom",
-    description: "Peaceful sanctuaries",
+    title: "Zona Notte",
+    description: "Santuari di pace",
     image:
       "https://images.pexels.com/photos/1743231/pexels-photo-1743231.jpeg?auto=compress&cs=tinysrgb&w=800",
     href: "/collections/bedroom",
   },
   {
     id: 3,
-    title: "Dining",
-    description: "Gather in style",
+    title: "Sala da Pranzo",
+    description: "Riunirsi con stile",
     image:
       "https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&w=800",
     href: "/collections/dining",
   },
   {
     id: 4,
-    title: "Office",
-    description: "Productive elegance",
+    title: "Ufficio",
+    description: "Eleganza produttiva",
     image:
       "https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg?auto=compress&cs=tinysrgb&w=800",
     href: "/collections/office",
@@ -49,10 +49,10 @@ export const FeaturedCollections = (): JSX.Element => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-light text-neutral-900 mb-4">
-            Featured Collections
+            Collezioni in Primo Piano
           </h2>
           <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-            Curated selections for every space in your home
+            Selezioni curate per ogni spazio della tua casa
           </p>
         </motion.div>
 
@@ -88,7 +88,7 @@ export const FeaturedCollections = (): JSX.Element => {
                     {collection.description}
                   </p>
                   <div className="flex items-center text-white text-sm font-medium">
-                    Explore
+                    Esplora
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
                   </div>
                 </div>

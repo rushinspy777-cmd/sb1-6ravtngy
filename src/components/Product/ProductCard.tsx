@@ -44,14 +44,14 @@ export const ProductCard = ({ product, onQuoteRequest }: ProductCardProps) => {
                     <Link
                         to={`/product/${product.id}`}
                         className="bg-white p-3 rounded-full hover:bg-neutral-100 transition-colors duration-200"
-                        aria-label="Quick view"
+                        aria-label="Anteprima rapida"
                     >
                         <Eye className="w-5 h-5 text-neutral-900" />
                     </Link>
                     <button
                         onClick={() => {}}
                         className="bg-white p-3 rounded-full hover:bg-neutral-100 transition-colors duration-200"
-                        aria-label="Add to cart"
+                        aria-label="Aggiungi al carrello"
                     >
                         <ShoppingCart className="w-5 h-5 text-neutral-900" />
                     </button>
@@ -103,7 +103,7 @@ export const ProductCard = ({ product, onQuoteRequest }: ProductCardProps) => {
                         ) : null}
                     </div>
                 </div>
-                {(product.category === "Kitchen" || product.price > 2000) && onQuoteRequest ? (
+                {(product.category === "Cucina" || product.price > 2000) && onQuoteRequest ? (
                     <button
                         onClick={() => onQuoteRequest(product.name)}
                         className="text-xs uppercase tracking-tighter font-semibold text-neutral-500 hover:text-neutral-900 transition-colors border-b border-neutral-300 pb-1"

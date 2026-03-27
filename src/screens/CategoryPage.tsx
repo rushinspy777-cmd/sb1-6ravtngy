@@ -12,8 +12,8 @@ const products = [
         name: "Oslo Lounge Chair",
         price: 1299,
         image: "https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&w=800",
-        category: "Living",
-        sub_category: "Sofas",
+        category: "Zona Giorno",
+        sub_category: "Divani",
         isReadyToShip: true,
     },
     {
@@ -21,8 +21,8 @@ const products = [
         name: "Copenhagen Sofa",
         price: 2899,
         image: "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=800",
-        category: "Living",
-        sub_category: "Sofas",
+        category: "Zona Giorno",
+        sub_category: "Divani",
         isReadyToShip: false,
     },
     {
@@ -30,8 +30,8 @@ const products = [
         name: "Minimalist Kitchen Island",
         price: 4599,
         image: "https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=800",
-        category: "Kitchen",
-        sub_category: "Modern",
+        category: "Cucina",
+        sub_category: "Moderno",
         isReadyToShip: false,
     }
 ];
@@ -61,7 +61,7 @@ export const CategoryPage = () => {
                         {subCategory || category}
                     </h1>
                     <p className="text-neutral-500">
-                        {filteredProducts.length} Results
+                        {filteredProducts.length} Risultati
                     </p>
                 </div>
 

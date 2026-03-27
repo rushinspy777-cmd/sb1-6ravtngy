@@ -12,7 +12,7 @@ export const Hero = (): JSX.Element => {
         animate={{ scale: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
         src="https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=1920"
-        alt="Modern living room with premium furniture"
+        alt="Soggiorno moderno con mobili di pregio"
         className="absolute inset-0 w-full h-full object-cover"
       />
 
@@ -25,9 +25,9 @@ export const Hero = (): JSX.Element => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-5xl md:text-7xl font-light text-white mb-6 leading-tight"
             >
-              Elevate Your
+              Qualità e Risparmio
               <br />
-              <span className="font-semibold">Living Space</span>
+              <span className="font-semibold">hanno trovato Casa</span>
             </motion.h1>
 
             <motion.p
@@ -36,8 +36,8 @@ export const Hero = (): JSX.Element => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-lg md:text-xl text-white/90 mb-8 max-w-xl leading-relaxed"
             >
-              Discover timeless furniture crafted with precision and passion.
-              Where exceptional design meets uncompromising quality.
+              Scopri arredi senza tempo creati con precisione e passione.
+              Dove il design d'eccezione incontra una qualità senza compromessi.
             </motion.p>
 
             <motion.div
@@ -50,7 +50,7 @@ export const Hero = (): JSX.Element => {
                 to="/shop"
                 className="group inline-flex items-center justify-center px-8 py-4 bg-white text-neutral-900 font-medium hover:bg-neutral-100 transition-all duration-300"
               >
-                Shop Now
+                Acquista Ora
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
 
@@ -58,7 +58,7 @@ export const Hero = (): JSX.Element => {
                 to="/collections"
                 className="group inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-medium hover:bg-white hover:text-neutral-900 transition-all duration-300"
               >
-                Explore Collections
+                Esplora le Collezioni
               </Link>
             </motion.div>
           </div>
