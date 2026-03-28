@@ -1,16 +1,4 @@
-export interface Hotspot {
-  x: number;
-  y: number;
-  productId: number;
-}
 
-export interface Slide {
-  image: string;
-  category: string;
-  title: string;
-  subtitle: string;
-  hotspots?: Hotspot[];
-}
 
 export interface Product {
   id: number;
@@ -44,36 +32,7 @@ export interface NavItem {
   subItems?: { name: string; href: string }[];
 }
 
-export const HERO_SLIDES: Slide[] = [
-  {
-    image: "https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=format,compress&cs=tinysrgb&w=1920&q=80",
-    category: "Cucina",
-    title: "Cucine da Sogno",
-    subtitle: "Soluzioni su misura per il cuore della tua casa, dove funzionalità ed estetica si incontrano.",
-    hotspots: [
-      { x: 55, y: 75, productId: 7 }
-    ]
-  },
-  {
-    image: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=format,compress&cs=tinysrgb&w=1920&q=80",
-    category: "Zona Giorno",
-    title: "Il Tuo Living",
-    subtitle: "Scopri arredi senza tempo creati con precisione e passione per il tuo spazio relax.",
-    hotspots: [
-      { x: 35, y: 70, productId: 2 },
-      { x: 58, y: 75, productId: 6 }
-    ]
-  },
-  {
-    image: "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=format,compress&cs=tinysrgb&w=1920&q=80",
-    category: "Zona Notte",
-    title: "Comfort Notturno",
-    subtitle: "Eleganza e riposo senza compromessi. Crea il tuo rifugio personale con i nostri letti e complementi.",
-    hotspots: [
-      { x: 50, y: 75, productId: 4 }
-    ]
-  },
-];
+
 
 export const PRODUCTS: Product[] = [
   {
