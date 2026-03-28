@@ -35,17 +35,7 @@ const BentoTile = ({ category, title, image, className = "", delay = 0 }: BentoT
         </div>
 
         {/* Content Layer */}
-        <div className="absolute inset-0 z-10 p-8 md:p-10 flex flex-col justify-between overflow-hidden">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ delay: delay + 0.4, duration: 0.5 }}
-            className="hidden group-hover:flex items-center gap-2 text-xs font-semibold uppercase text-white bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full w-fit border border-white/20"
-          >
-            Scopri Collezione
-            <ArrowUpRight className="w-4 h-4" />
-          </motion.div>
-
+        <div className="absolute inset-0 z-10 p-8 md:p-10 flex flex-col justify-end overflow-hidden">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
