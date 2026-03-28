@@ -1,6 +1,5 @@
 import { Navigation, CartDrawer, SearchModal } from "../../components/Navigation";
 import { Hero } from "../../components/Hero";
-import { FeaturedCollections } from "../../components/FeaturedCollections";
 import { BestSellers } from "../../components/BestSellers";
 import { About } from "../../components/About";
 import { Testimonials } from "../../components/Testimonials";
@@ -16,9 +15,6 @@ export const Homepage = (): JSX.Element => {
       <SearchModal />
       <main id="main-content">
         <Hero />
-        <SectionReveal>
-          <FeaturedCollections />
-        </SectionReveal>
         <SectionReveal>
           <BestSellers />
         </SectionReveal>

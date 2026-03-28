@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ShoppingCart, Eye } from "lucide-react";
+import { ShoppingCart, Eye, Truck } from "lucide-react";
 import { useState } from "react";
 import { Filters } from "../Filters";
 import { LeadCaptureModal } from "../LeadCapture";
@@ -45,7 +45,7 @@ export const BestSellers = (): JSX.Element => {
           <p className="text-lg text-neutral-600 max-w-2xl mx-auto mb-8">
             I nostri pezzi più amati, scelti dai nostri clienti
           </p>
-          <button 
+          <button
             onClick={openConsultationModal}
             className="nav-link-caps border-b-2 border-neutral-900 pb-1 hover:text-neutral-500 hover:border-neutral-500 transition-all"
           >
@@ -56,7 +56,7 @@ export const BestSellers = (): JSX.Element => {
         <Filters />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product, index) => (
+          {products.filter(p => [1, 2, 3].includes(p.id)).map((product, index) => (
             <motion.div
               key={product.id}
               initial={{ opacity: 0, y: 30 }}
@@ -101,25 +101,22 @@ export const BestSellers = (): JSX.Element => {
                   </button>
                 </motion.div>
 
-                <div className="absolute top-4 right-4 flex flex-col gap-2 items-end">
-                  {product.isReadyToShip && (
-                    <motion.span
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      className="bg-green-600 text-white nav-link-caps px-2 py-1 rounded-sm shadow-lg flex items-center gap-1.5"
-                    >
-                      <span className="relative flex h-2 w-2">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-300 opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-green-100"></span>
-                      </span>
-                      Pronta Consegna
-                    </motion.span>
-                  )}
-                  <span className="bg-neutral-900 text-white text-xs font-medium px-3 py-1">
-                    {product.category}
-                  </span>
-                </div>
               </div>
+              {product.isReadyToShip && (
+                <div className="flex justify-end -mt-8 mb-4 mr-2 relative z-10">
+                  <motion.span
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    className="bg-green-600 text-white nav-link-caps px-2 py-1 rounded-sm shadow-lg flex items-center gap-1.5"
+                  >
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-300 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-green-100"></span>
+                    </span>
+                    Pronta Consegna
+                  </motion.span>
+                </div>
+              )}
 
               <div className="flex justify-between items-start">
                 <div>
@@ -136,7 +133,7 @@ export const BestSellers = (): JSX.Element => {
                   </p>
                 </div>
                 {product.category === "Cucina" || product.price > 2000 ? (
-                  <button 
+                  <button
                     onClick={() => openQuoteModal(product.name)}
                     className="nav-link-caps text-neutral-500 hover:text-neutral-900 transition-colors border-b border-neutral-300 pb-1"
                   >
@@ -164,7 +161,7 @@ export const BestSellers = (): JSX.Element => {
         </motion.div>
       </div>
 
-      <LeadCaptureModal 
+      <LeadCaptureModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         productName={selectedProduct}
