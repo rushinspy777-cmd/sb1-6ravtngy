@@ -64,61 +64,35 @@ export const Navigation = (): JSX.Element => {
           </Link>
 
           <div className="hidden md:flex items-center space-x-1">
-            {menuItems.map((item, idx) => {
-              const hasMegaMenu = item.name === "Cucina" || item.name === "Zona Giorno";
-
-              return (
-                <div
-                  key={item.name}
-                  className="flex items-center"
-                  onMouseEnter={() => setHoveredItem(item.name)}
-                  onMouseLeave={() => setHoveredItem(null)}
+            {menuItems.map((item, idx) => (
+              <div
+                key={item.name}
+                className="flex items-center"
+                onMouseEnter={() => setHoveredItem(item.name)}
+                onMouseLeave={() => setHoveredItem(null)}
+              >
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: idx * 0.05 + 0.3, duration: 0.5 }}
                 >
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: idx * 0.05 + 0.3, duration: 0.5 }}
+                  <Link
+                    to={item.href}
+                    className={`px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full flex items-center space-x-1 relative group ${hoveredItem === item.name ? "text-neutral-900 bg-neutral-100/50" : "text-neutral-600 hover:text-neutral-900"
+                      }`}
                   >
-                    <Link
-                      to={item.href}
-                      className={`px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full flex items-center space-x-1 relative group ${hoveredItem === item.name ? "text-neutral-900 bg-neutral-100/50" : "text-neutral-600 hover:text-neutral-900"
-                        }`}
-                    >
-                      <span>{item.name}</span>
-                      {item.subItems && (
-                        <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${hoveredItem === item.name ? "rotate-180" : ""}`} />
-                      )}
-                    </Link>
-                  </motion.div>
+                    <span>{item.name}</span>
+                    {item.subItems && (
+                      <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${hoveredItem === item.name ? "rotate-180" : ""}`} />
+                    )}
+                  </Link>
+                </motion.div>
 
-                  {hasMegaMenu ? (
-                    <MegaMenu item={item} isOpen={hoveredItem === item.name} />
-                  ) : item.subItems && (
-                    <AnimatePresence>
-                      {hoveredItem === item.name && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                          animate={{ opacity: 1, y: 0, scale: 1 }}
-                          exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                          transition={{ duration: 0.2 }}
-                          className="absolute top-full left-1/2 -translate-x-1/2 w-56 bg-white/95 backdrop-blur-md shadow-2xl border border-neutral-100 py-3 rounded-2xl mt-1 overflow-hidden"
-                        >
-                          {item.subItems.map((sub) => (
-                            <Link
-                              key={sub.name}
-                              to={sub.href}
-                              className="block px-5 py-2.5 text-sm text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50 transition-colors"
-                            >
-                              {sub.name}
-                            </Link>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  )}
-                </div>
-              );
-            })}
+                {item.subItems && (
+                  <MegaMenu item={item} isOpen={hoveredItem === item.name} />
+                )}
+              </div>
+            ))}
           </div>
 
           <div className="flex items-center space-x-1">
