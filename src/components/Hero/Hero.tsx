@@ -94,7 +94,39 @@ export const Hero = (): JSX.Element => {
   ];
 
   return (
-    <section ref={containerRef} className="relative pt-24 pb-12 px-4 md:px-8 bg-[#FDFCFB]">
+    <section ref={containerRef} className="relative pt-32 pb-24 px-4 md:px-8 bg-[#FDFCFB]">
+      {/* Section 1: Headline & CTAs */}
+      <div className="max-w-[1400px] mx-auto mb-20 px-2 lg:px-0">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: [0.19, 1, 0.22, 1] }}
+          className="max-w-4xl"
+        >
+          <span className="block text-[11px] tracking-[0.15em] uppercase text-[#6B5B4E] font-medium mb-6 font-sans">
+            ARREDAMENTO · CUCINE · OUTLET
+          </span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-[80px] font-serif font-light text-[#2C2219] leading-[1.05] tracking-tight mb-12">
+            La tua casa, <br className="hidden md:block" /> come l'hai sempre immaginata
+          </h1>
+          <div className="flex flex-wrap gap-5 pt-2">
+            <Link 
+              to="/shop" 
+              className="px-10 py-5 bg-[#2C2219] text-[#FBF8F4] text-[11px] font-medium uppercase tracking-[0.15em] rounded-[2px] hover:bg-[#A0724A] transition-all duration-500 flex items-center gap-3 group shadow-sm"
+            >
+              Scopri i nostri prodotti 
+              <ArrowUpRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1" />
+            </Link>
+            <Link 
+              to="/contact" 
+              className="px-10 py-5 border border-[#2C2219]/20 text-[#2C2219] text-[11px] font-medium uppercase tracking-[0.15em] rounded-[2px] hover:border-[#2C2219] transition-all duration-300"
+            >
+              Richiedi un preventivo
+            </Link>
+          </div>
+        </motion.div>
+      </div>
+
       <div className="max-w-[1400px] mx-auto overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 h-auto md:h-[85vh] gap-4">
           {/* Tile 1: Large (Desktop 2cols/2rows) */}
