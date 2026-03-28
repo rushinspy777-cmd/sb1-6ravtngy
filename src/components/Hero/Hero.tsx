@@ -1,9 +1,53 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useTransform, useSpring } from "framer-motion";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Plus } from "lucide-react";
 import { Link } from "react-router-dom";
 
-import { HERO_SLIDES as slides } from "../../constants/data";
+import { HERO_SLIDES as slides, PRODUCTS } from "../../constants/data";
+import type { Hotspot as HotspotType } from "../../constants/data";
+
+const Hotspot = ({ x, y, productId }: HotspotType) => {
+  const product = PRODUCTS.find((p) => p.id === productId);
+  const [isHovered, setIsHovered] = useState(false);
+
+  if (!product) return null;
+
+  return (
+    <div
+      className="absolute z-30"
+      style={{ left: `${x}%`, top: `${y}%` }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <button className="relative flex items-center justify-center w-8 h-8 group pointer-events-auto">
+        <span className="absolute inset-0 rounded-full bg-white/20 animate-ping group-hover:bg-white/40 transition-colors" />
+        <span className="relative flex items-center justify-center w-4 h-4 rounded-full bg-white text-neutral-900 shadow-xl group-hover:scale-125 transition-transform duration-300">
+          <Plus className="w-3 h-3" />
+        </span>
+      </button>
+
+      <AnimatePresence>
+        {isHovered && (
+          <motion.div
+            initial={{ opacity: 0, y: 10, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 10, scale: 0.95 }}
+            className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-48 p-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl shadow-2xl pointer-events-none"
+          >
+            <div className="flex flex-col gap-1">
+              <span className="text-[10px] text-white/60 uppercase tracking-widest font-semibold">{product.category}</span>
+              <h4 className="text-white text-sm font-medium leading-tight">{product.name}</h4>
+              <p className="text-white text-xs font-light mt-1">€{product.price.toLocaleString()}</p>
+              <div className="mt-2 text-[10px] text-white font-medium border-b border-white/20 pb-0.5 inline-block self-start">
+                Visualizza Prodotto
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
 
 
 export const Hero = (): JSX.Element => {
@@ -30,38 +74,59 @@ export const Hero = (): JSX.Element => {
   }, []);
 
   useEffect(() => {
-    const timer = setInterval(nextSlide, 5000);
+    const timer = setInterval(nextSlide, 7000);
     return () => clearInterval(timer);
   }, [nextSlide]);
 
   const slideVariants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? "100%" : "-100%",
+    enter: {
       opacity: 0,
-      scale: 1.1,
-    }),
+    },
     center: {
       zIndex: 1,
-      x: 0,
       opacity: 1,
-      scale: 1,
     },
-    exit: (direction: number) => ({
+    exit: {
       zIndex: 0,
-      x: direction < 0 ? "100%" : "-100%",
       opacity: 0,
-      scale: 1,
-      transition: {
-        x: { type: "spring" as any, stiffness: 300, damping: 30 },
-        opacity: { duration: 0.4 },
-      },
-    }),
+    },
   };
 
-  const textVariants = {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3,
+      },
+    },
+    exit: { opacity: 0 },
+  };
+
+  const itemVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.215, 0.61, 0.355, 1] as any,
+      },
+    },
     exit: { opacity: 0, y: -20 },
+  };
+
+  const titleWordVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.215, 0.61, 0.355, 1] as any,
+      },
+    },
   };
 
   return (
@@ -75,19 +140,33 @@ export const Hero = (): JSX.Element => {
           animate="center"
           exit="exit"
           transition={{
-            x: { type: "spring", stiffness: 300, damping: 30 },
-            opacity: { duration: 0.5 },
-            scale: { duration: 0.8, ease: "easeOut" },
+            opacity: { duration: 1.5, ease: "easeInOut" },
           }}
-          className="absolute inset-0 w-full h-full"
+          className="absolute inset-0 w-full h-full overflow-hidden"
         >
-          <div className="absolute inset-0 bg-black/40 z-10" />
-          <motion.img
-            src={slides[currentSlide].image}
-            alt={slides[currentSlide].title}
-            className="absolute inset-0 w-full h-[120%] object-cover"
-            style={{ y: springY }}
-          />
+          <div className="absolute inset-0 hero-gradient z-10" />
+
+          {/* Ken Burns Image */}
+          <motion.div
+            initial={{ scale: 1.1 }}
+            animate={{ scale: 1.2 }}
+            transition={{ duration: 8, ease: "linear" }}
+            className="absolute inset-0 w-full h-full"
+          >
+            <motion.img
+              src={slides[currentSlide].image}
+              alt={slides[currentSlide].title}
+              className="w-full h-[120%] object-cover"
+              style={{ y: springY }}
+            />
+          </motion.div>
+
+          {/* Hotspots */}
+          <div className="absolute inset-0 z-20 pointer-events-none">
+            {slides[currentSlide].hotspots?.map((hotspot, idx) => (
+              <Hotspot key={idx} {...hotspot} />
+            ))}
+          </div>
         </motion.div>
       </AnimatePresence>
 
@@ -97,29 +176,40 @@ export const Hero = (): JSX.Element => {
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentSlide}
-                variants={textVariants}
+                variants={containerVariants}
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                transition={{ duration: 0.8, ease: "easeOut" }}
               >
-                <div className="mb-6 inline-block px-4 py-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full">
-                  <span className="text-white text-xs md:text-sm font-medium tracking-widest uppercase">
+                <motion.div
+                  variants={itemVariants}
+                  className="mb-8 inline-block px-5 py-2 bg-orange-400/20 backdrop-blur-xl border border-orange-400/30 rounded-full"
+                >
+                  <span className="text-orange-400 text-xs md:text-sm font-bold tracking-[0.2em] uppercase">
                     Collezione {slides[currentSlide].category}
                   </span>
-                </div>
+                </motion.div>
 
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-light text-white mb-6 leading-[1.1]">
-                  {slides[currentSlide].title.split(" ")[0]}
-                  <br />
-                  <span className="font-semibold">{slides[currentSlide].title.split(" ").slice(1).join(" ")}</span>
+                <h1 className="text-6xl md:text-8xl lg:text-[9rem] font-serif text-white mb-10 leading-[0.9] tracking-tighter drop-shadow-2xl selection:bg-orange-400 selection:text-white">
+                  {slides[currentSlide].title.split(" ").map((word, i, arr) => (
+                    <motion.span
+                      key={i}
+                      variants={titleWordVariants}
+                      className={`inline-block ${i === arr.length - 1 ? "italic font-light text-orange-400/90" : "font-black"}`}
+                    >
+                      {word}&nbsp;
+                    </motion.span>
+                  ))}
                 </h1>
 
-                <p className="text-lg md:text-xl text-white/90 mb-10 max-w-xl leading-relaxed">
+                <motion.p
+                  variants={itemVariants}
+                  className="text-xl md:text-2xl text-white mb-12 max-w-2xl leading-relaxed font-medium tracking-wide drop-shadow-md lg:pr-20"
+                >
                   {slides[currentSlide].subtitle}
-                </p>
+                </motion.p>
 
-                <div className="flex flex-col sm:flex-row gap-5">
+                <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-5">
                   <Link
                     to="/shop"
                     className="group inline-flex items-center justify-center px-8 py-4 bg-white text-neutral-900 font-medium hover:bg-neutral-100 transition-all duration-300 shadow-lg shadow-black/5"
@@ -134,7 +224,7 @@ export const Hero = (): JSX.Element => {
                   >
                     Esplora le Collezioni
                   </Link>
-                </div>
+                </motion.div>
               </motion.div>
             </AnimatePresence>
           </div>
@@ -159,21 +249,46 @@ export const Hero = (): JSX.Element => {
         </button>
       </div>
 
-      {/* Pagination Dots */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-30 flex gap-3">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => {
-              setDirection(index > currentSlide ? 1 : -1);
-              setCurrentSlide(index);
-            }}
-            className={`h-1.5 transition-all duration-500 rounded-full ${
-              index === currentSlide ? "w-10 bg-white" : "w-3 bg-white/40 hover:bg-white/60"
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
+      {/* Linear Progress Navigation */}
+      <div className="absolute bottom-12 left-0 z-30 w-full px-4 md:px-8">
+        <div className="max-w-7xl mx-auto flex items-end justify-between">
+          <div className="flex gap-12">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  setDirection(index > currentSlide ? 1 : -1);
+                  setCurrentSlide(index);
+                }}
+                className="group relative flex flex-col gap-4 text-left"
+                aria-label={`Go to slide ${index + 1}`}
+              >
+                <span className={`text-xs font-black tracking-[0.2em] transition-colors duration-500 ${index === currentSlide ? "text-orange-400" : "text-white/30 group-hover:text-white/60"
+                  }`}>
+                  0{index + 1}
+                </span>
+
+                <div className="h-[3px] w-24 bg-white/10 relative overflow-hidden">
+                  {index === currentSlide && (
+                    <motion.div
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: 1 }}
+                      transition={{ duration: 7, ease: "linear" }}
+                      className="absolute inset-0 bg-orange-400 origin-left shadow-[0_0_10px_rgba(197,160,125,0.5)]"
+                    />
+                  )}
+                  {index < currentSlide && (
+                    <div className="absolute inset-0 bg-white/20" />
+                  )}
+                </div>
+              </button>
+            ))}
+          </div>
+
+          <div className="hidden md:block text-white/5 text-[12rem] font-serif font-black select-none pointer-events-none mb-[-40px] leading-none">
+            0{currentSlide + 1}
+          </div>
+        </div>
       </div>
 
       {/* Scroll Indicator */}
@@ -183,7 +298,7 @@ export const Hero = (): JSX.Element => {
         transition={{ delay: 1.5 }}
         className="absolute bottom-10 right-10 z-30 hidden lg:block"
       >
-        <div className="flex items-center gap-4 text-white/60 text-[10px] font-bold tracking-[0.3em] uppercase">
+        <div className="flex items-center gap-4 text-white/80 text-[10px] font-bold tracking-[0.3em] uppercase">
           <span className="[writing-mode:vertical-lr] mb-4 h-12 w-px bg-white/20 relative overflow-hidden">
             <motion.div
               animate={{ y: ["-100%", "100%"] }}

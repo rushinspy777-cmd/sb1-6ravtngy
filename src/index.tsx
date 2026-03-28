@@ -8,6 +8,7 @@ import { Homepage } from "./screens/Homepage";
 import { CategoryPage } from "./screens/CategoryPage";
 import { ProductDetail } from "./screens/ProductDetail";
 import PageTransition from "./components/PageTransition";
+import { FloatingDirections } from "./components/FloatingDirections";
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -20,16 +21,19 @@ const AppRoutes = () => {
   }, [location.pathname, lenis]);
 
   return (
-    <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<PageTransition><Homepage /></PageTransition>} />
-        <Route path="/old" element={<PageTransition><CoverOld /></PageTransition>} />
-        <Route path="/:category" element={<PageTransition><CategoryPage /></PageTransition>} />
-        <Route path="/:category/:subCategory" element={<PageTransition><CategoryPage /></PageTransition>} />
-        <Route path="/product/:id" element={<PageTransition><ProductDetail /></PageTransition>} />
-        <Route path="/outlet" element={<PageTransition><CategoryPage /></PageTransition>} />
-      </Routes>
-    </AnimatePresence>
+    <>
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<PageTransition><Homepage /></PageTransition>} />
+          <Route path="/old" element={<PageTransition><CoverOld /></PageTransition>} />
+          <Route path="/:category" element={<PageTransition><CategoryPage /></PageTransition>} />
+          <Route path="/:category/:subCategory" element={<PageTransition><CategoryPage /></PageTransition>} />
+          <Route path="/product/:id" element={<PageTransition><ProductDetail /></PageTransition>} />
+          <Route path="/outlet" element={<PageTransition><CategoryPage /></PageTransition>} />
+        </Routes>
+      </AnimatePresence>
+      <FloatingDirections />
+    </>
   );
 };
 
