@@ -91,24 +91,32 @@ export const Hero = (): JSX.Element => {
 
   return (
     <section ref={containerRef} className="relative pt-24 pb-12 px-4 md:px-8 bg-[#FDFCFB]">
-      <div className="max-w-[1400px] mx-auto h-auto md:h-[85vh]">
-        {/* Desktop Grid Layout */}
-        <div className="hidden md:grid grid-cols-3 grid-rows-2 h-full gap-4 lg:gap-6">
-          <BentoTile {...tiles[0]} />
-          <BentoTile {...tiles[1]} />
+      <div className="max-w-[1400px] mx-auto overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 h-auto md:h-[85vh] gap-4">
+          {/* Tile 1: Large (Desktop 2cols/2rows) */}
+          <BentoTile 
+            {...tiles[0]} 
+            className="md:col-span-2 md:row-span-2 h-[500px] md:h-full" 
+          />
           
-          {/* Bottom Right nested grid */}
-          <div className="grid grid-cols-2 gap-4 lg:gap-6">
-            <BentoTile {...tiles[2]} className="col-span-1 h-full" />
-            <BentoTile {...tiles[3]} className="col-span-1 h-full" />
-          </div>
-        </div>
+          {/* Tile 2: Medium (Desktop Top-Right) */}
+          <BentoTile 
+            {...tiles[1]} 
+            className="md:col-span-1 md:row-span-1 h-[400px] md:h-full" 
+          />
 
-        {/* Mobile Layout */}
-        <div className="flex flex-col gap-4 md:hidden">
-          {tiles.map((tile, i) => (
-            <BentoTile key={i} {...tile} className="h-[400px]" delay={i * 0.1} />
-          ))}
+          {/* Nested Group (Desktop Bottom-Right) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 md:col-span-1 md:row-span-1">
+            <BentoTile 
+              {...tiles[2]} 
+              className="h-[300px] md:h-full" 
+            />
+            <BentoTile 
+              {...tiles[3]} 
+              className="h-[300px] md:h-full" 
+              delay={0.4} 
+            />
+          </div>
         </div>
       </div>
 
