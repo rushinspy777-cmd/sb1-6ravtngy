@@ -100,7 +100,10 @@ export const Testimonials = (): JSX.Element => {
         >
           <div className="flex items-center justify-center gap-8 text-neutral-600">
             <div>
-              <div className="text-3xl font-light text-neutral-900">4.9/5</div>
+              <div className="text-3xl font-light text-neutral-900 flex items-center justify-center gap-2">
+                <Star className="w-6 h-6 fill-yellow-400 text-yellow-400" />
+                4.9/5
+              </div>
               <div className="text-sm">Valutazione Media</div>
             </div>
             <div className="w-px h-12 bg-neutral-300" />

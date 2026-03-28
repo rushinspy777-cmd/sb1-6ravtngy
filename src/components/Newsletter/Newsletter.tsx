@@ -82,7 +82,7 @@ export const Newsletter = (): JSX.Element => {
                 </form>
               )}
 
-              <p className="text-sm text-white/60 mt-4">
+              <p className="text-sm text-white mt-4">
                 Rispettiamo la tua privacy. Disiscriviti in qualsiasi momento.
               </p>
             </motion.div>
