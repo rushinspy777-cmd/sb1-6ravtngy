@@ -75,3 +75,4 @@ Since the website is in Italian, we will ensure:
 ---
 > [!NOTE]
 > Once this plan is approved, I will proceed with generating the visual assets and updating the code.
+--end--
