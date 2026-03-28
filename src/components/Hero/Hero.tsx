@@ -94,40 +94,62 @@ export const Hero = (): JSX.Element => {
   ];
 
   return (
-    <section ref={containerRef} className="relative pt-32 pb-24 px-4 md:px-8 bg-[#FDFCFB]">
-      {/* Section 1: Headline & CTAs */}
-      <div className="max-w-[1400px] mx-auto mb-20 px-2 lg:px-0">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.19, 1, 0.22, 1] }}
-          className="max-w-4xl"
-        >
-          <span className="block text-[11px] tracking-[0.15em] uppercase text-[#6B5B4E] font-medium mb-6 font-sans">
-            ARREDAMENTO · CUCINE · OUTLET
-          </span>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-[80px] font-serif font-light text-[#2C2219] leading-[1.05] tracking-tight mb-12">
-            La tua casa, <br className="hidden md:block" /> come l'hai sempre immaginata
-          </h1>
-          <div className="flex flex-wrap gap-5 pt-2">
-            <Link 
-              to="/shop" 
-              className="px-10 py-5 bg-[#2C2219] text-[#FBF8F4] text-[11px] font-medium uppercase tracking-[0.15em] rounded-[2px] hover:bg-[#A0724A] transition-all duration-500 flex items-center gap-3 group shadow-sm"
-            >
-              Scopri i nostri prodotti 
-              <ArrowUpRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1" />
-            </Link>
-            <Link 
-              to="/contact" 
-              className="px-10 py-5 border border-[#2C2219]/20 text-[#2C2219] text-[11px] font-medium uppercase tracking-[0.15em] rounded-[2px] hover:border-[#2C2219] transition-all duration-300"
-            >
-              Richiedi un preventivo
-            </Link>
-          </div>
-        </motion.div>
+    <section ref={containerRef} className="relative w-full bg-[#FDFCFB]">
+      {/* 2. Hero Image Guidance - Full-bleed Cinematic Visual */}
+      <div className="relative h-[85vh] md:h-screen w-full overflow-hidden flex items-center px-4 md:px-8">
+        <div className="absolute inset-0 z-0">
+          <motion.img 
+            initial={{ scale: 1.1 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 1.5, ease: [0.19, 1, 0.22, 1] }}
+            src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1920&auto=format&fit=crop" 
+            alt="Luxury Interior" 
+            className="w-full h-full object-cover"
+          />
+          {/* Section 2 Gradient Overlay: Dark gradient on bottom 60% */}
+          <div 
+            className="absolute inset-0 z-10" 
+            style={{ 
+              background: 'linear-gradient(to top, rgba(30,18,10,0.75) 0%, rgba(30,18,10,0) 60%)' 
+            }} 
+          />
+        </div>
+
+        {/* Section 1: Headline & CTAs (Now centered on the hero visual) */}
+        <div className="relative z-20 max-w-[1400px] mx-auto w-full">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: [0.19, 1, 0.22, 1] }}
+            className="max-w-4xl"
+          >
+            <span className="block text-[11px] tracking-[0.15em] uppercase text-white/70 font-medium mb-6 font-sans">
+              ARREDAMENTO · CUCINE · OUTLET
+            </span>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-[80px] font-serif font-light text-white leading-[1.05] tracking-tight mb-12">
+              La tua casa, <br className="hidden md:block" /> come l'hai sempre immaginata
+            </h1>
+            <div className="flex flex-wrap gap-5 pt-2">
+              <Link 
+                to="/shop" 
+                className="px-10 py-5 bg-white text-[#2C2219] text-[11px] font-medium uppercase tracking-[0.15em] rounded-[2px] hover:bg-[#F5EFE6] transition-all duration-500 flex items-center gap-3 group shadow-sm"
+              >
+                Scopri i nostri prodotti 
+                <ArrowUpRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </Link>
+              <Link 
+                to="/contact" 
+                className="px-10 py-5 border border-white/40 text-white text-[11px] font-medium uppercase tracking-[0.15em] rounded-[2px] hover:border-white transition-all duration-300"
+              >
+                Richiedi un preventivo
+              </Link>
+            </div>
+          </motion.div>
+        </div>
       </div>
 
-      <div className="max-w-[1400px] mx-auto overflow-hidden">
+      {/* Bento Grid (Preserved below the fold) */}
+      <div className="max-w-[1400px] mx-auto overflow-hidden py-24 px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 h-auto md:h-[85vh] gap-4">
           {/* Tile 1: Large (Desktop 2cols/2rows) */}
           <BentoTile 
@@ -159,6 +181,7 @@ export const Hero = (): JSX.Element => {
       {/* Aesthetic Detail */}
       <div className="absolute bottom-0 left-0 w-full h-[1px] bg-neutral-200/50" />
     </section>
+
   );
 };
 
