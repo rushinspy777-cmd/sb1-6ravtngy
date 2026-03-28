@@ -98,7 +98,7 @@ export const MegaMenu = ({ item, isOpen }: MegaMenuProps) => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="absolute bottom-8 left-8 text-white">
                 <p className="nav-link-caps mb-2 opacity-80">Catalogo 2024</p>
-                <h4 className="font-serif text-3xl">{data?.title || "Design d'Eccellenza"}</h4>
+                <h4 className="font-serif text-3xl !text-white">{data?.title || "Design d'Eccellenza"}</h4>
               </div>
             </div>
           </div>
