@@ -32,36 +32,61 @@ export const Testimonials = (): JSX.Element => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white p-8 shadow-sm hover:shadow-md transition-shadow duration-300"
+              className="bg-white p-1 shadow-sm hover:shadow-md transition-shadow duration-300 rounded-lg overflow-hidden border border-neutral-100 flex flex-col"
             >
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-5 h-5 fill-neutral-900 text-neutral-900"
-                  />
-                ))}
-              </div>
-
-              <p className="text-neutral-700 leading-relaxed mb-6">
-                "{testimonial.content}"
-              </p>
-
-              <div className="flex items-center gap-4">
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover"
-                />
-                <div>
-                  <div className="font-medium text-neutral-900">
-                    {testimonial.name}
+              {testimonial.image.includes("clientreview") ? (
+                <div className="flex-1 bg-neutral-50 p-4 flex flex-col justify-center">
+                  <div className="overflow-hidden rounded shadow-sm border border-neutral-200">
+                    <img
+                      src={testimonial.image}
+                      alt={`Recensione di ${testimonial.name}`}
+                      className="w-full h-auto object-contain"
+                    />
                   </div>
-                  <div className="text-sm text-neutral-600">
-                    {testimonial.role}
+                  <div className="mt-4 flex items-center justify-between px-2">
+                    <span className="text-[10px] uppercase tracking-widest text-neutral-400 font-semibold flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                      Verified Google Review
+                    </span>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <div className="p-8 flex-1 flex flex-col">
+                  <div className="flex items-center gap-1 mb-6">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="w-4 h-4 fill-neutral-900 text-neutral-900"
+                      />
+                    ))}
+                  </div>
+
+                  <p className="text-neutral-700 leading-relaxed italic mb-8 flex-1">
+                    "{testimonial.content}"
+                  </p>
+
+                  <div className="flex items-center gap-4 mt-auto">
+                    <div className="relative">
+                      <img
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        className="w-14 h-14 rounded-full object-cover border-2 border-neutral-100"
+                      />
+                      <div className="absolute -bottom-1 -right-1 bg-white rounded-full p-1 shadow-sm border border-neutral-100">
+                        <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                      </div>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-neutral-900">
+                        {testimonial.name}
+                      </div>
+                      <div className="text-xs text-neutral-500 tracking-wider uppercase">
+                        {testimonial.role}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </motion.div>
           ))}
         </div>

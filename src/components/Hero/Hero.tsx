@@ -45,7 +45,7 @@ const BentoTile = ({ category, title, image, className = "", delay = 0 }: BentoT
               {category}
             </span>
             <div className="flex items-end justify-between gap-4">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-serif text-white leading-[1.1] tracking-tight">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl xl:text-1xl font-serif text-white leading-[1.1] tracking-tight">
                 {title}
               </h3>
               <div className="mb-1 p-3 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 hidden md:flex">
@@ -64,30 +64,30 @@ export const Hero = (): JSX.Element => {
 
   const tiles = [
     {
-      category: "Living Room",
+      category: "",
       title: "Soggiorno Moderno",
-      image: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?q=80&w=1920&auto=format&fit=crop",
+      image: "src/assets/images/moderno1.jpg",
       className: "md:col-span-2 md:row-span-2",
       delay: 0.1
     },
     {
-      category: "Kitchens",
+      category: "",
       title: "Cucine d'Autore",
-      image: "https://images.unsplash.com/photo-1600585154526-990dcea464dd?q=80&w=1920&auto=format&fit=crop",
+      image: "src/assets/images/cucina.jpg",
       className: "md:col-span-1 md:row-span-1",
       delay: 0.2
     },
     {
-      category: "Backyard",
+      category: "",
       title: "Outdoor & Giardino",
-      image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb3?q=80&w=1200&auto=format&fit=crop",
+      image: "src/assets/images/giardino1.jpg",
       className: "md:col-span-1 md:row-span-1",
       delay: 0.3
     },
     {
-      category: "Office",
+      category: "",
       title: "Ufficio & Smart Working",
-      image: "https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=1200&auto=format&fit=crop",
+      image: "src/assets/images/office.jpg",
       className: "md:col-span-1 md:row-span-1",
       delay: 0.4
     }

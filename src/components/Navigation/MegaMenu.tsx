@@ -10,27 +10,27 @@ interface MegaMenuProps {
 
 const CATEGORY_DATA: Record<string, { image: string, title: string, subtitle: string }> = {
   "Cucina": {
-    image: "https://images.pexels.com/photos/2062426/pexels-photo-2062426.jpeg?auto=format,compress&cs=tinysrgb&w=1200",
+    image: "src/assets/images/cucina.jpg",
     title: "L'Arte della Cucina",
     subtitle: "Sistemi integrati per un ambiente dove il design incontra la funzionalità quotidiana."
   },
   "Zona Giorno": {
-    image: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=format,compress&cs=tinysrgb&w=1200",
+    image: "src/assets/images/livingroom.jpg",
     title: "Evoluzione Living",
-    subtitle: "Arredi progettati per il comfort assoluto e l'espressione della vostra personalità."
+    subtitle: "Arredi progettati per il comfort assoluto e l'spressione della vostra personalità."
   },
   "Zona Notte": {
-    image: "https://images.pexels.com/photos/1743231/pexels-photo-1743231.jpeg?auto=format,compress&cs=tinysrgb&w=1200",
+    image: "src/assets/images/bedbedroom.jpg",
     title: "Sogni d'Eccellenza",
     subtitle: "Riposo e benessere in un ambiente progettato per il tuo relax assoluto."
   },
   "Ufficio": {
-    image: "https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg?auto=format,compress&cs=tinysrgb&w=1200",
+    image: "src/assets/images/office11.jpg",
     title: "Workspace d'Autore",
     subtitle: "Soluzioni ergonomiche e di design per trasformare il tuo ufficio in uno spazio ispirativo."
   },
   "Complementi": {
-    image: "https://images.pexels.com/photos/3288102/pexels-photo-3288102.jpeg?auto=format,compress&cs=tinysrgb&w=1200",
+    image: "src/assets/images/complimenti.jpg",
     title: "Dettagli di Stile",
     subtitle: "Elementi distintivi che completano e definiscono il carattere unico della tua casa."
   },
@@ -63,7 +63,7 @@ export const MegaMenu = ({ item, isOpen }: MegaMenuProps) => {
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
-            
+
             <div className="col-span-4">
               <h4 className="nav-link-caps text-neutral-400 mb-8">Collezioni</h4>
               <div className="grid grid-cols-1 gap-y-1">
@@ -88,8 +88,8 @@ export const MegaMenu = ({ item, isOpen }: MegaMenuProps) => {
 
             <div className="col-span-5 relative group overflow-hidden rounded-2xl shadow-xl">
               <div className="aspect-[16/10] overflow-hidden">
-                <img 
-                  src={data?.image || "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=format,compress&cs=tinysrgb&w=800&q=75"} 
+                <img
+                  src={data?.image || "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=format,compress&cs=tinysrgb&w=800&q=75"}
                   alt={item.name}
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />

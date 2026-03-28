@@ -14,7 +14,7 @@ export const About = (): JSX.Element => {
           >
             <div className="relative aspect-square overflow-hidden">
               <img
-                src="https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                src="src/assets/images/chisiamo.jpg"
                 alt="Artisan crafting furniture"
                 className="w-full h-full object-cover"
               />

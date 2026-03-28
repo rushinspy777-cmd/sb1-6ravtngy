@@ -33,13 +33,12 @@ export const FeaturedCollections = (): JSX.Element => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`${
-                index === 0 
-                  ? "md:col-span-2 md:row-span-2 h-[450px] md:h-auto" 
-                  : index === 1 
-                  ? "md:col-span-2 md:row-span-1 h-[215px] md:h-auto" 
-                  : "md:col-span-1 md:row-span-1 h-[215px] md:h-auto"
-              }`}
+              className={`${index === 0
+                  ? "md:col-span-2 md:row-span-2 h-[450px] md:h-auto"
+                  : index === 1
+                    ? "md:col-span-2 md:row-span-1 h-[215px] md:h-auto"
+                    : "md:col-span-1 md:row-span-1 h-[215px] md:h-auto"
+                }`}
             >
               <Link
                 to={collection.href}
