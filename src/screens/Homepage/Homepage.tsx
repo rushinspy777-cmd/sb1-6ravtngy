@@ -1,5 +1,5 @@
 import { Navigation, CartDrawer, SearchModal } from "../../components/Navigation";
-import { Hero } from "../../components/Hero";
+import { Hero, ValuePropositionBanner, StickyUSPHeader } from "../../components/Hero";
 import { FeaturedCollections } from "../../components/FeaturedCollections";
 import { BestSellers } from "../../components/BestSellers";
 import { About } from "../../components/About";
@@ -15,7 +15,9 @@ export const Homepage = (): JSX.Element => {
       <Navigation />
       <CartDrawer />
       <SearchModal />
+      <StickyUSPHeader />
       <main id="main-content">
+        <ValuePropositionBanner />
         <Hero />
         <SectionReveal>
           <FeaturedCollections />
