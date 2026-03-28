@@ -39,7 +39,7 @@ export const PRODUCTS: Product[] = [
     id: 1,
     name: "Divano Letto Roberta Materasso",
     price: 1299,
-    image: "src/assets/images/besellerdivano.jpg",
+    image: "/images/besellerdivano.jpg",
     category: "",
     isReadyToShip: true,
   },
@@ -47,7 +47,7 @@ export const PRODUCTS: Product[] = [
     id: 2,
     name: "Poltrona Flora Relax Alza persona Blu Jeans",
     price: 2899,
-    image: "src/assets/images/besellerpoltron.jpg",
+    image: "/images/besellerpoltron.jpg",
     category: "",
     isReadyToShip: true,
   },
@@ -55,7 +55,7 @@ export const PRODUCTS: Product[] = [
     id: 3,
     name: "Consolle allungabile ",
     price: 1899,
-    image: "src/assets/images/besellertables.jpg",
+    image: "/images/besellertables.jpg",
     category: "",
     isReadyToShip: true,
   },
@@ -100,7 +100,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: "Guida locale",
     content: "Abbiamo preso 1 divano e 6 sedie (con ritiro delle ns vecchie)... ci hanno consegnato il 23/12/2025 [rispettando i 20gg lavorativi dall'ordine (25/11/25)]... Sig. Matteo molto disponibile per modifiche/variazioni/personalizzazione agli articoli. Consigliatissimo... torneremo a trovarvi!",
     rating: 5,
-    image: "src/assets/images/clientreview1.jpg",
+    image: "/images/clientreview1.jpg",
   },
   {
     id: 2,
@@ -108,7 +108,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: "Guida locale",
     content: "Esperienza molto positiva e buon prodotto. Siamo stati in questo negozio per scegliere un divano letto: gentilezza e competenza ci hanno convinto all'acquisto. Il prodotto è arrivato nei tempi previsti e ha confermato le caratteristiche esposte in negozio. Mi ha colpito anche l'assistenza ricevuta. Super consigliato.",
     rating: 5,
-    image: "src/assets/images/clientreview2.jpg",
+    image: "/images/clientreview2.jpg",
   },
   {
     id: 3,
@@ -116,7 +116,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: "Cliente",
     content: "Ho finalmente realizzato il sogno di una vita. Ho acquistato la cucina seguendo i consigli di Luigia e del suo team, sempre precisi e puntuali. La qualità offerta valorizza la cucina. Sono felice della mia scelta e consiglio a tutti di visitare il loro sito web.",
     rating: 5,
-    image: "src/assets/images/clientreview3.jpg",
+    image: "/images/clientreview3.jpg",
   },
 ];
 

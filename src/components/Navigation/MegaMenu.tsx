@@ -10,27 +10,27 @@ interface MegaMenuProps {
 
 const CATEGORY_DATA: Record<string, { image: string, title: string, subtitle: string }> = {
   "Cucina": {
-    image: "src/assets/images/cucina.jpg",
+    image: "/images/cucina.jpg",
     title: "L'Arte della Cucina",
     subtitle: "Sistemi integrati per un ambiente dove il design incontra la funzionalità quotidiana."
   },
   "Zona Giorno": {
-    image: "src/assets/images/livingroom.jpg",
+    image: "/images/livingroom.jpg",
     title: "Evoluzione Living",
     subtitle: "Arredi progettati per il comfort assoluto e l'spressione della vostra personalità."
   },
   "Zona Notte": {
-    image: "src/assets/images/bedbedroom.jpg",
+    image: "/images/bedbedroom.jpg",
     title: "Sogni d'Eccellenza",
     subtitle: "Riposo e benessere in un ambiente progettato per il tuo relax assoluto."
   },
   "Ufficio": {
-    image: "src/assets/images/office11.jpg",
+    image: "/images/office11.jpg",
     title: "Workspace d'Autore",
     subtitle: "Soluzioni ergonomiche e di design per trasformare il tuo ufficio in uno spazio ispirativo."
   },
   "Complementi": {
-    image: "src/assets/images/complimenti.jpg",
+    image: "/images/complimenti.jpg",
     title: "Dettagli di Stile",
     subtitle: "Elementi distintivi che completano e definiscono il carattere unico della tua casa."
   },

@@ -66,28 +66,28 @@ export const Hero = (): JSX.Element => {
     {
       category: "",
       title: "Soggiorno Moderno",
-      image: "src/assets/images/moderno1.jpg",
+      image: "/images/moderno1.jpg",
       className: "md:col-span-2 md:row-span-2",
       delay: 0.1
     },
     {
       category: "",
       title: "Cucine d'Autore",
-      image: "src/assets/images/cucina.jpg",
+      image: "/images/cucina.jpg",
       className: "md:col-span-1 md:row-span-1",
       delay: 0.2
     },
     {
       category: "",
       title: "Outdoor & Giardino",
-      image: "src/assets/images/giardino1.jpg",
+      image: "/images/giardino1.jpg",
       className: "md:col-span-1 md:row-span-1",
       delay: 0.3
     },
     {
       category: "",
       title: "Ufficio & Smart Working",
-      image: "src/assets/images/office.jpg",
+      image: "/images/office.jpg",
       className: "md:col-span-1 md:row-span-1",
       delay: 0.4
     }
