@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef, useState } from "react";
 
 interface ParallaxImageProps {
@@ -16,7 +16,9 @@ const ParallaxImage = ({ src, alt, className = "", offset = 50 }: ParallaxImageP
     offset: ["start end", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [-offset, offset]);
+  const springConfig = { stiffness: 100, damping: 30, restDelta: 0.001 };
+  const smoothYProgress = useSpring(scrollYProgress, springConfig);
+  const y = useTransform(smoothYProgress, [0, 1], [-offset, offset]);
 
   return (
     <div ref={containerRef} className={`overflow-hidden relative bg-neutral-200 ${className}`}>

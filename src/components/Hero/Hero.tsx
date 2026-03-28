@@ -1,5 +1,5 @@
-import { useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useCallback, useRef } from "react";
+import { motion, AnimatePresence, useScroll, useTransform, useSpring } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -9,6 +9,15 @@ import { HERO_SLIDES as slides } from "../../constants/data";
 export const Hero = (): JSX.Element => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
+  const containerRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+  const springY = useSpring(y, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
   const nextSlide = useCallback(() => {
     setDirection(1);
@@ -43,7 +52,7 @@ export const Hero = (): JSX.Element => {
       opacity: 0,
       scale: 1,
       transition: {
-        x: { type: "spring", stiffness: 300, damping: 30 },
+        x: { type: "spring" as any, stiffness: 300, damping: 30 },
         opacity: { duration: 0.4 },
       },
     }),
@@ -56,7 +65,7 @@ export const Hero = (): JSX.Element => {
   };
 
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-neutral-900">
+    <section ref={containerRef} className="relative h-screen w-full overflow-hidden bg-neutral-900">
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={currentSlide}
@@ -73,10 +82,11 @@ export const Hero = (): JSX.Element => {
           className="absolute inset-0 w-full h-full"
         >
           <div className="absolute inset-0 bg-black/40 z-10" />
-          <img
+          <motion.img
             src={slides[currentSlide].image}
             alt={slides[currentSlide].title}
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-[120%] object-cover"
+            style={{ y: springY }}
           />
         </motion.div>
       </AnimatePresence>
