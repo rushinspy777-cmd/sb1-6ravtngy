@@ -143,6 +143,22 @@ export const Footer = (): JSX.Element => {
             </ul>
           </div>
         </div>
+        
+        {/* Google Map Section */}
+        <div className="mb-12 w-full h-[350px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative group">
+          <div className="absolute inset-0 bg-neutral-900/20 pointer-events-none group-hover:bg-transparent transition-colors duration-500" />
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3040.762708244957!2d14.989837676424976!3d40.347609659842625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133bfe50c4e5135f%3A0x39665d7a227018be!2sVia%20S.%20Pio%20X%2C%2063%2C%2084043%20Agropoli%20SA!5e0!3m2!1sen!2sit!4v1774707663887!5m2!1sen!2sit"
+            width="100%"
+            height="100%"
+            style={{ border: 0, filter: 'grayscale(0.6) contrast(1.1) brightness(0.9)' }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Posizione AM Mida Agropoli"
+            className="hover:grayscale-0 hover:contrast-100 hover:brightness-100 transition-all duration-1000 ease-in-out"
+          />
+        </div>
 
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
