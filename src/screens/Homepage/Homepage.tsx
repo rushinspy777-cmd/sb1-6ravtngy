@@ -1,4 +1,5 @@
 import { Navigation, CartDrawer, SearchModal } from "../../components/Navigation";
+import { FinancingBar } from "../../components/FinancingBar";
 import { Hero } from "../../components/Hero";
 import { BestSellers } from "../../components/BestSellers";
 import { About } from "../../components/About";
@@ -11,6 +12,7 @@ export const Homepage = (): JSX.Element => {
   return (
     <div className="bg-[#FDFCFB] w-full min-h-screen">
       <Navigation />
+      <FinancingBar />
       <CartDrawer />
       <SearchModal />
       <main id="main-content">
