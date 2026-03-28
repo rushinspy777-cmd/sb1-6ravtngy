@@ -22,6 +22,12 @@
   .text-shadow-sm {
     text-shadow: 0 1px 2px rgba(0,0,0,0.2);
   }
+
+  /* Color Palette Utilities from HER_BYCLAUDE Section 4 */
+  .bg-warm-white { background-color: var(--color-warm-white); }
+  .bg-espresso { background-color: var(--color-espresso); }
+  .text-stone { color: var(--color-stone); }
+  .text-wood { color: var(--color-wood); }
 }
 
 :root {
@@ -216,7 +222,7 @@
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: var(--color-border);
   }
 
   body {
@@ -224,6 +230,7 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 1.7;
+    background-color: var(--color-cream);
     color: var(--color-espresso);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -235,9 +242,10 @@
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   }
 
-  h1, h2, h3 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 400;
+    color: var(--color-espresso);
     @apply tracking-tight;
   }
 

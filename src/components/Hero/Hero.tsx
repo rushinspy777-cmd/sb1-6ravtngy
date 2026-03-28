@@ -98,20 +98,20 @@ export const Hero = (): JSX.Element => {
       {/* 2. Hero Image Guidance - Full-bleed Cinematic Visual */}
       <div className="relative h-[85vh] md:h-screen w-full overflow-hidden flex items-center px-4 md:px-8">
         <div className="absolute inset-0 z-0">
-          <motion.img 
+          <motion.img
             initial={{ scale: 1.1 }}
             animate={{ scale: 1 }}
             transition={{ duration: 1.5, ease: [0.19, 1, 0.22, 1] }}
-            src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1920&auto=format&fit=crop" 
-            alt="Luxury Interior" 
+            src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1920&auto=format&fit=crop"
+            alt="Luxury Interior"
             className="w-full h-full object-cover"
           />
           {/* Section 2 Gradient Overlay: Dark gradient on bottom 60% */}
-          <div 
-            className="absolute inset-0 z-10" 
-            style={{ 
-              background: 'linear-gradient(to top, rgba(30,18,10,0.75) 0%, rgba(30,18,10,0) 60%)' 
-            }} 
+          <div
+            className="absolute inset-0 z-10"
+            style={{
+              background: 'linear-gradient(to top right, rgba(30,18,10,0.9) 0%, rgba(30,18,10,0.4) 40%, transparent 100%)'
+            }}
           />
         </div>
 
@@ -123,22 +123,22 @@ export const Hero = (): JSX.Element => {
             transition={{ duration: 1, ease: [0.19, 1, 0.22, 1] }}
             className="max-w-4xl"
           >
-            <span className="block text-[11px] tracking-[0.15em] uppercase text-white/70 font-medium mb-6 font-sans">
+            <span className="block text-[11px] tracking-[0.15em] uppercase text-[#F5EFE6] font-medium mb-6 font-sans">
               ARREDAMENTO · CUCINE · OUTLET
             </span>
             <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-[80px] font-serif font-light text-white leading-[1.05] tracking-tight mb-12">
               La tua casa, <br className="hidden md:block" /> come l'hai sempre immaginata
             </h1>
             <div className="flex flex-wrap gap-5 pt-2">
-              <Link 
-                to="/shop" 
+              <Link
+                to="/shop"
                 className="px-10 py-5 bg-white text-[#2C2219] text-[11px] font-medium uppercase tracking-[0.15em] rounded-[2px] hover:bg-[#F5EFE6] transition-all duration-500 flex items-center gap-3 group shadow-sm"
               >
-                Scopri i nostri prodotti 
+                Scopri i nostri prodotti
                 <ArrowUpRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1" />
               </Link>
-              <Link 
-                to="/contact" 
+              <Link
+                to="/contact"
                 className="px-10 py-5 border border-white/40 text-white text-[11px] font-medium uppercase tracking-[0.15em] rounded-[2px] hover:border-white transition-all duration-300"
               >
                 Richiedi un preventivo
@@ -152,27 +152,27 @@ export const Hero = (): JSX.Element => {
       <div className="max-w-[1400px] mx-auto overflow-hidden py-24 px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 h-auto md:h-[85vh] gap-4">
           {/* Tile 1: Large (Desktop 2cols/2rows) */}
-          <BentoTile 
-            {...tiles[0]} 
-            className="md:col-span-2 md:row-span-2 h-[500px] md:h-full" 
+          <BentoTile
+            {...tiles[0]}
+            className="md:col-span-2 md:row-span-2 h-[500px] md:h-full"
           />
-          
+
           {/* Tile 2: Medium (Desktop Top-Right) */}
-          <BentoTile 
-            {...tiles[1]} 
-            className="md:col-span-1 md:row-span-1 h-[400px] md:h-full" 
+          <BentoTile
+            {...tiles[1]}
+            className="md:col-span-1 md:row-span-1 h-[400px] md:h-full"
           />
 
           {/* Nested Group (Desktop Bottom-Right) */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 md:col-span-1 md:row-span-1">
-            <BentoTile 
-              {...tiles[2]} 
-              className="h-[300px] md:h-full" 
+            <BentoTile
+              {...tiles[2]}
+              className="h-[300px] md:h-full"
             />
-            <BentoTile 
-              {...tiles[3]} 
-              className="h-[300px] md:h-full" 
-              delay={0.4} 
+            <BentoTile
+              {...tiles[3]}
+              className="h-[300px] md:h-full"
+              delay={0.4}
             />
           </div>
         </div>
