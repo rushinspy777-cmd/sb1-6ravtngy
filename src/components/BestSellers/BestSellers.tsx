@@ -47,7 +47,7 @@ export const BestSellers = (): JSX.Element => {
           </p>
           <button 
             onClick={openConsultationModal}
-            className="text-sm uppercase tracking-widest font-bold border-b-2 border-neutral-900 pb-1 hover:text-neutral-500 hover:border-neutral-500 transition-all"
+            className="nav-link-caps border-b-2 border-neutral-900 pb-1 hover:text-neutral-500 hover:border-neutral-500 transition-all"
           >
             Prenota una Consulenza Progettuale
           </button>
@@ -106,7 +106,7 @@ export const BestSellers = (): JSX.Element => {
                     <motion.span
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
-                      className="bg-green-600 text-white text-[10px] uppercase tracking-widest font-bold px-2 py-1 rounded-sm shadow-lg flex items-center gap-1.5"
+                      className="bg-green-600 text-white nav-link-caps px-2 py-1 rounded-sm shadow-lg flex items-center gap-1.5"
                     >
                       <span className="relative flex h-2 w-2">
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-300 opacity-75"></span>
@@ -138,7 +138,7 @@ export const BestSellers = (): JSX.Element => {
                 {product.category === "Cucina" || product.price > 2000 ? (
                   <button 
                     onClick={() => openQuoteModal(product.name)}
-                    className="text-xs uppercase tracking-tighter font-semibold text-neutral-500 hover:text-neutral-900 transition-colors border-b border-neutral-300 pb-1"
+                    className="nav-link-caps text-neutral-500 hover:text-neutral-900 transition-colors border-b border-neutral-300 pb-1"
                   >
                     Richiedi Preventivo
                   </button>

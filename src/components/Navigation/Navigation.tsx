@@ -78,7 +78,7 @@ export const Navigation = (): JSX.Element => {
                 >
                   <Link
                     to={item.href}
-                    className={`px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full flex items-center space-x-1 relative group ${hoveredItem === item.name ? "text-neutral-900 bg-neutral-100/50" : "text-neutral-600 hover:text-neutral-900"
+                    className={`px-4 py-2 nav-link-caps transition-all duration-300 rounded-full flex items-center space-x-1 relative group ${hoveredItem === item.name ? "text-neutral-900 bg-neutral-100/50" : "text-neutral-600 hover:text-neutral-900"
                       }`}
                   >
                     <span>{item.name}</span>

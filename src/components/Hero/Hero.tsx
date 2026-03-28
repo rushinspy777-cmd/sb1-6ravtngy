@@ -41,7 +41,7 @@ const BentoTile = ({ category, title, image, className = "", delay = 0 }: BentoT
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: delay + 0.3, duration: 0.5 }}
           >
-            <span className="inline-block text-[10px] md:text-xs font-sans font-medium tracking-[0.25em] uppercase text-white/60 mb-3 border-b border-white/20 pb-1">
+            <span className="inline-block nav-link-caps text-white/60 mb-3 border-b border-white/20 pb-1">
               {category}
             </span>
             <div className="flex items-end justify-between gap-4">

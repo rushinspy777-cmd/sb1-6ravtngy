@@ -64,7 +64,7 @@ export const Footer = (): JSX.Element => {
                   </a>
                 </div>
                 <div className="flex items-center gap-3 ml-8">
-                  <span className="text-white/50 text-[10px] uppercase tracking-widest font-bold">WhatsApp:</span>
+                  <span className="text-white/50 nav-link-caps">WhatsApp:</span>
                   <a
                     href="https://wa.me/393338840807"
                     target="_blank"

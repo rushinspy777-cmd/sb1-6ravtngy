@@ -58,14 +58,14 @@ export const MegaMenu = ({ item, isOpen }: MegaMenuProps) => {
               <p className="text-neutral-500 text-base leading-relaxed mb-8">
                 {data?.subtitle || "Esplora le nostre soluzioni di design curate per ogni ambiente della tua casa."}
               </p>
-              <Link to={item.href} className="inline-flex items-center space-x-2 text-sm font-bold uppercase tracking-widest text-neutral-900 group">
+              <Link to={item.href} className="inline-flex items-center space-x-2 nav-link-caps text-neutral-900 group">
                 <span>Vedi Tutto</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
             
             <div className="col-span-4">
-              <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-neutral-400 mb-8">Collezioni</h4>
+              <h4 className="nav-link-caps text-neutral-400 mb-8">Collezioni</h4>
               <div className="grid grid-cols-1 gap-y-1">
                 {item.subItems.map((sub, idx) => (
                   <motion.div
@@ -97,7 +97,7 @@ export const MegaMenu = ({ item, isOpen }: MegaMenuProps) => {
               <div className="absolute inset-0 bg-neutral-900/10" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="absolute bottom-8 left-8 text-white">
-                <p className="text-xs font-bold uppercase tracking-[0.2em] mb-2 opacity-80">Catalogo 2024</p>
+                <p className="nav-link-caps mb-2 opacity-80">Catalogo 2024</p>
                 <h4 className="font-serif text-3xl">{data?.title || "Design d'Eccellenza"}</h4>
               </div>
             </div>

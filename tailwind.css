@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Outfit:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 @tailwind base;
@@ -24,6 +25,12 @@
 }
 
 :root {
+  --color-cream:      #F5EFE6;
+  --color-warm-white: #FBF8F4;
+  --color-wood:       #A0724A;
+  --color-espresso:   #2C2219;
+  --color-stone:      #6B5B4E;
+  --color-border:     #E0D5C8;
   --black: rgba(26, 26, 26, 1);
   --gray-400: rgba(150, 150, 150, 1);
   --orange-400: rgba(197, 160, 125, 1);
@@ -213,8 +220,11 @@
   }
 
   body {
-    @apply bg-background text-foreground text-base font-normal leading-relaxed;
-    font-feature-settings: "rlig" 1, "alt" 1, "cv01" 1, "cv02" 1, "cv03" 1, "cv04" 1;
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--color-espresso);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -225,13 +235,15 @@
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-serif tracking-tight;
+  h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    @apply tracking-tight;
   }
 
-  h1 { @apply text-7xl font-bold; }
-  h2 { @apply text-6xl font-semibold; }
-  h3 { @apply text-5xl font-semibold; }
+  h1 { font-size: clamp(36px, 6vw, 72px); font-weight: 300; }
+  h2 { font-size: 40px; font-weight: 400; }
+  h3 { font-size: 22px; font-weight: 400; }
   h4 { @apply text-4xl font-medium; }
   h5 { @apply text-2xl font-medium; }
   h6 { @apply text-xl font-medium; }
@@ -246,6 +258,15 @@
 
   .serif {
     @apply font-serif;
+  }
+
+  .nav-link-caps,
+  .uppercase-label {
+    letter-spacing: 0.12em;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-family: 'Outfit', sans-serif;
   }
 }
 
