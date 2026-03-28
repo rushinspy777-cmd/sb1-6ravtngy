@@ -35,7 +35,7 @@ export const Newsletter = (): JSX.Element => {
               <h2 className="text-3xl md:text-4xl font-light text-white mb-4">
                 Rimani Ispirato
               </h2>
-              <p className="text-lg text-white/80 mb-8">
+              <p className="text-lg text-white mb-8">
                 Iscriviti per ricevere offerte esclusive, consigli di design e
                 aggiornamenti sulle nuove collezioni direttamente nella tua
                 casella di posta.
