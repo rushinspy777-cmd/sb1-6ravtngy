@@ -2,7 +2,7 @@ import { StrictMode, useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import { ReactLenis, useLenis } from "lenis/react";
+import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
 import { CoverOld } from "./screens/Cover";
 import { Homepage } from "./screens/Homepage";
 import { CategoryPage } from "./screens/CategoryPage";
