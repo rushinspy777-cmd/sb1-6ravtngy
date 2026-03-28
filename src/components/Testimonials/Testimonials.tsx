@@ -24,7 +24,7 @@ export const Testimonials = (): JSX.Element => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.id}
@@ -35,7 +35,7 @@ export const Testimonials = (): JSX.Element => {
               className="bg-white p-1 shadow-sm hover:shadow-md transition-shadow duration-300 rounded-lg overflow-hidden border border-neutral-100 flex flex-col"
             >
               {testimonial.image.includes("clientreview") ? (
-                <div className="flex-1 bg-neutral-50 p-4 flex flex-col justify-center">
+                <div className="flex-1 bg-neutral-50 p-2 flex flex-col justify-center">
                   <div className="overflow-hidden rounded shadow-sm border border-neutral-200">
                     <img
                       src={testimonial.image}
@@ -70,7 +70,7 @@ export const Testimonials = (): JSX.Element => {
                       <img
                         src={testimonial.image}
                         alt={testimonial.name}
-                        className="w-14 h-14 rounded-full object-cover border-2 border-neutral-100"
+                        className="w-20 h-20 rounded-full object-cover border-2 border-neutral-100"
                       />
                       <div className="absolute -bottom-1 -right-1 bg-white rounded-full p-1 shadow-sm border border-neutral-100">
                         <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
